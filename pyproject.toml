@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-vietnamese-summarizer"
+version = "0.1.0"
+description = "A controllable Transformer-based Vietnamese summarization system for meetings and study notes."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Smart Summarizer Team" }]
+dependencies = [
+    "accelerate>=0.27.0",
+    "datasets>=2.16.0",
+    "evaluate>=0.4.1",
+    "fastapi>=0.110.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "pyyaml>=6.0.1",
+    "rouge-score>=0.1.2",
+    "sentencepiece>=0.1.99",
+    "streamlit>=1.31.0",
+    "torch>=2.1.0",
+    "transformers>=4.38.0",
+    "uvicorn>=0.27.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.3.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

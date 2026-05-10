@@ -1,0 +1,52 @@
+project_name: smart-vietnamese-summarizer
+seed: 42
+
+# Phase 2: Fine-tune thêm trên synthetic multi-mode data
+# Mục đích: Model học hiểu prefix khác nhau → output style khác nhau
+# PHẢI chạy SAU Phase 1 — load checkpoint v1 làm base
+
+model:
+  name: models/vit5-summarizer-v1       # Load từ Phase 1 checkpoint, KHÔNG phải HuggingFace
+  output_dir: models/vit5-summarizer-v2
+
+dataset:
+  # Synthetic data được generate bằng scripts/generate_synthetic.py
+  train_file: data/synthetic/train.jsonl
+  validation_file: data/synthetic/validation.jsonl
+
+# Prefix mapping cho 4 modes — mỗi sample trong synthetic data có field "mode"
+# Script train_phase2.py sẽ map mode → prefix tự động
+prefixes:
+  concise: "tom tat ngan gon: "
+  bullet: "tom tat thanh cac y chinh: "
+  action_items: "trich xuat cac viec can lam: "
+  study_notes: "tao ghi chu hoc tap: "
+
+tokenization:
+  max_source_length: 512
+  max_target_length: 128
+
+training:
+  epochs: 2                              # Ít hơn Phase 1 — chỉ adapt nhẹ
+  learning_rate: 1.0e-5                  # Nhỏ hơn Phase 1 để không phá knowledge đã học
+  per_device_train_batch_size: 2
+  per_device_eval_batch_size: 2
+  gradient_accumulation_steps: 4         # Effective batch = 8 (nhỏ hơn vì data ít)
+  fp16: true
+  eval_strategy: epoch
+  save_strategy: epoch
+  save_total_limit: 2
+  load_best_model_at_end: true
+  metric_for_best_model: eval_loss
+  logging_steps: 10                      # Log thường xuyên hơn vì data ít
+  predict_with_generate: true
+  warmup_ratio: 0.15                     # Warm up lâu hơn vì data nhỏ, tránh spike
+
+generation:
+  num_beams: 4
+  repetition_penalty: 1.2
+  no_repeat_ngram_size: 3
+  max_new_tokens:
+    short: 64
+    medium: 128
+    long: 192

@@ -1,0 +1,20 @@
+model:
+  name: models/vit5-summarizer-v2
+  fallback_name: VietAI/vit5-base
+  device: auto
+
+api:
+  base_url: http://127.0.0.1:8000
+  timeout_seconds: 180
+
+tokenization:
+  max_source_length: 512
+
+generation:
+  num_beams: 4
+  repetition_penalty: 1.2
+  no_repeat_ngram_size: 3
+  max_new_tokens:
+    short: 64
+    medium: 128
+    long: 192

@@ -1,0 +1,1 @@
+"""Product-facing summarization utilities."""

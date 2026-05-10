@@ -1,0 +1,24 @@
+seed: 42
+
+model:
+  name: models/vit5-summarizer-v2
+  fallback_name: VietAI/vit5-base
+
+dataset:
+  test_file: data/processed/test.jsonl
+  max_samples:
+
+tokenization:
+  max_source_length: 512
+  max_target_length: 128
+
+generation:
+  mode: concise
+  length: medium
+  num_beams: 4
+  repetition_penalty: 1.2
+  no_repeat_ngram_size: 3
+
+outputs:
+  metrics_file: reports/metrics/eval_results.json
+  predictions_file: reports/examples/test_predictions.jsonl

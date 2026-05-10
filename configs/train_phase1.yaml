@@ -1,0 +1,60 @@
+project_name: smart-vietnamese-summarizer
+seed: 42
+
+# Phase 1: Fine-tune trên VietNews dataset
+# Mục đích: Model học kỹ năng summarization cốt lõi trên tiếng Việt tự nhiên
+
+model:
+  name: VietAI/vit5-base
+  output_dir: models/vit5-summarizer-v1
+
+dataset:
+  name: ithieund/VietNews-Abs-Sum
+  language: vietnamese
+  train_file: data/processed/train.jsonl
+  validation_file: data/processed/validation.jsonl
+  test_file: data/processed/test.jsonl
+  max_samples:
+    train: null
+    validation: null
+    test: null
+
+preprocessing:
+  min_doc_length: 50         # ký tự — bỏ sample quá ngắn
+  max_doc_length: 10000      # ký tự — bỏ outlier quá dài
+  min_summary_length: 10     # ký tự
+  prefix: "tom tat: "        # Phase 1 chỉ dùng 1 prefix chung
+
+tokenization:
+  max_source_length: 512
+  max_target_length: 128
+
+training:
+  epochs: 3
+  learning_rate: 2.0e-5
+  per_device_train_batch_size: 2
+  per_device_eval_batch_size: 2
+  gradient_accumulation_steps: 8
+  fp16: true
+  eval_strategy: epoch
+  save_strategy: epoch
+  save_total_limit: 2          # Giữ tối đa 2 checkpoints để tiết kiệm disk
+  load_best_model_at_end: true
+  metric_for_best_model: eval_loss
+  logging_steps: 50
+  predict_with_generate: true
+  warmup_ratio: 0.1            # 10% training steps đầu warm up LR
+
+generation:
+  num_beams: 4
+  repetition_penalty: 1.2
+  no_repeat_ngram_size: 3
+  max_new_tokens:
+    short: 64
+    medium: 128
+    long: 192
+
+# Fallback nếu VietNews load fail
+fallback_dataset:
+  name: esdurmus/wiki_lingua
+  language: vietnamese
