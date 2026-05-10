@@ -56,6 +56,8 @@ reports/                 Metrics, predictions, figures, and examples
 models/                  Fine-tuned model artifacts
 ```
 
+For the full system map, training/inference diagrams, artifact strategy, and production checklist, read [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+
 ## Installation
 
 ```bash
