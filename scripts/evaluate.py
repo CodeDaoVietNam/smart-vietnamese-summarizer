@@ -3,6 +3,10 @@ from __future__ import annotations
 import argparse
 import json
 
+from _bootstrap import add_project_paths
+
+add_project_paths()
+
 from smart_summarizer.config import deep_get, load_config
 from smart_summarizer.data.dataset_loader import load_jsonl
 from smart_summarizer.evaluation.error_analysis import quick_error_tags

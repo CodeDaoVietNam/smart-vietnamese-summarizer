@@ -3,6 +3,10 @@ from __future__ import annotations
 import argparse
 import json
 
+from _bootstrap import add_project_paths
+
+add_project_paths()
+
 from datasets import DatasetDict
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, Seq2SeqTrainer, Seq2SeqTrainingArguments
 

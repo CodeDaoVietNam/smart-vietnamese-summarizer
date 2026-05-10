@@ -2,6 +2,10 @@ from __future__ import annotations
 
 import argparse
 
+from _bootstrap import add_project_paths
+
+add_project_paths()
+
 from smart_summarizer.config import deep_get, load_config
 from smart_summarizer.data.dataset_loader import (
     ensure_train_validation_test,

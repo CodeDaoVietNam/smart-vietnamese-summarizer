@@ -3,6 +3,10 @@ from __future__ import annotations
 import argparse
 import json
 
+from _bootstrap import add_project_paths
+
+add_project_paths()
+
 from smart_summarizer.utils.paths import ensure_parent
 
 

@@ -4,6 +4,10 @@ import argparse
 import shutil
 from pathlib import Path
 
+from _bootstrap import add_project_paths
+
+add_project_paths()
+
 from smart_summarizer.utils.paths import resolve_path
 
 

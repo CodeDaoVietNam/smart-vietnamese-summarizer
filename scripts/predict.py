@@ -2,6 +2,10 @@ from __future__ import annotations
 
 import argparse
 
+from _bootstrap import add_project_paths
+
+add_project_paths()
+
 from smart_summarizer.product.summarizer import SmartSummarizer
 
 
