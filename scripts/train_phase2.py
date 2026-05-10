@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import inspect
 import json
 
 from _bootstrap import add_project_paths
@@ -22,6 +23,34 @@ from smart_summarizer.utils.seed import set_seed
 
 
 logger = get_logger(__name__)
+
+
+def build_training_args_kwargs(config: dict, output_dir: str) -> dict:
+    kwargs = {
+        "output_dir": output_dir,
+        "num_train_epochs": float(deep_get(config, "training.epochs", 2)),
+        "learning_rate": float(deep_get(config, "training.learning_rate", 1e-5)),
+        "per_device_train_batch_size": int(deep_get(config, "training.per_device_train_batch_size", 2)),
+        "per_device_eval_batch_size": int(deep_get(config, "training.per_device_eval_batch_size", 2)),
+        "gradient_accumulation_steps": int(deep_get(config, "training.gradient_accumulation_steps", 4)),
+        "fp16": bool(deep_get(config, "training.fp16", True)),
+        "save_strategy": deep_get(config, "training.save_strategy", "epoch"),
+        "save_total_limit": int(deep_get(config, "training.save_total_limit", 2)),
+        "load_best_model_at_end": bool(deep_get(config, "training.load_best_model_at_end", True)),
+        "metric_for_best_model": deep_get(config, "training.metric_for_best_model", "eval_loss"),
+        "logging_steps": int(deep_get(config, "training.logging_steps", 10)),
+        "predict_with_generate": bool(deep_get(config, "training.predict_with_generate", True)),
+        "warmup_ratio": float(deep_get(config, "training.warmup_ratio", 0.15)),
+        "report_to": "none",
+    }
+
+    signature = inspect.signature(Seq2SeqTrainingArguments.__init__)
+    if "evaluation_strategy" in signature.parameters:
+        kwargs["evaluation_strategy"] = deep_get(config, "training.eval_strategy", "epoch")
+    elif "eval_strategy" in signature.parameters:
+        kwargs["eval_strategy"] = deep_get(config, "training.eval_strategy", "epoch")
+
+    return kwargs
 
 
 def parse_args() -> argparse.Namespace:
@@ -67,22 +96,7 @@ def main() -> None:
     )
 
     training_args = Seq2SeqTrainingArguments(
-        output_dir=str(output_dir),
-        num_train_epochs=float(deep_get(config, "training.epochs", 2)),
-        learning_rate=float(deep_get(config, "training.learning_rate", 1e-5)),
-        per_device_train_batch_size=int(deep_get(config, "training.per_device_train_batch_size", 2)),
-        per_device_eval_batch_size=int(deep_get(config, "training.per_device_eval_batch_size", 2)),
-        gradient_accumulation_steps=int(deep_get(config, "training.gradient_accumulation_steps", 4)),
-        fp16=bool(deep_get(config, "training.fp16", True)),
-        evaluation_strategy=deep_get(config, "training.eval_strategy", "epoch"),
-        save_strategy=deep_get(config, "training.save_strategy", "epoch"),
-        save_total_limit=int(deep_get(config, "training.save_total_limit", 2)),
-        load_best_model_at_end=bool(deep_get(config, "training.load_best_model_at_end", True)),
-        metric_for_best_model=deep_get(config, "training.metric_for_best_model", "eval_loss"),
-        logging_steps=int(deep_get(config, "training.logging_steps", 10)),
-        predict_with_generate=bool(deep_get(config, "training.predict_with_generate", True)),
-        warmup_ratio=float(deep_get(config, "training.warmup_ratio", 0.15)),
-        report_to="none",
+        **build_training_args_kwargs(config, str(output_dir))
     )
 
     data_collator = build_seq2seq_collator(tokenizer, model)
