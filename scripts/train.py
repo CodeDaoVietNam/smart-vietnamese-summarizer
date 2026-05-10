@@ -8,12 +8,13 @@ from _bootstrap import add_project_paths
 add_project_paths()
 
 from datasets import DatasetDict
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, Seq2SeqTrainer, Seq2SeqTrainingArguments
+from transformers import AutoModelForSeq2SeqLM, Seq2SeqTrainer, Seq2SeqTrainingArguments
 
 from smart_summarizer.config import deep_get, load_config
 from smart_summarizer.data.collator import build_seq2seq_collator
 from smart_summarizer.data.dataset_loader import load_jsonl_dataset
 from smart_summarizer.evaluation.metrics import compute_rouge
+from smart_summarizer.modeling.model_loader import load_tokenizer
 from smart_summarizer.modeling.trainer import tokenize_seq2seq_dataset
 from smart_summarizer.utils.logging import get_logger
 from smart_summarizer.utils.paths import ensure_parent, resolve_path
@@ -40,7 +41,7 @@ def main() -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
 
     logger.info("Loading tokenizer and model: %s", model_name)
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    tokenizer = load_tokenizer(model_name)
     model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
     raw_datasets = DatasetDict(

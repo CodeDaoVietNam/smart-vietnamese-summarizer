@@ -14,7 +14,7 @@ def choose_device(device: str = "auto") -> str:
 def load_tokenizer(model_name_or_path: str):
     from transformers import AutoTokenizer
 
-    return AutoTokenizer.from_pretrained(model_name_or_path)
+    return AutoTokenizer.from_pretrained(model_name_or_path, use_fast=False)
 
 
 def load_seq2seq_model(model_name_or_path: str, device: str = "auto"):
