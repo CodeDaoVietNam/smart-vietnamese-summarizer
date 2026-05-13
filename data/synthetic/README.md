@@ -13,7 +13,7 @@ Recommended files:
 Each row should look like:
 
 ```json
-{"document": "...", "summary": "...", "mode": "bullet"}
+{"base_id": "meeting_01", "document": "...", "summary": "...", "mode": "bullet", "domain": "meeting_notes"}
 ```
 
 Supported `mode` values:
@@ -28,14 +28,16 @@ Current reviewed dataset:
 - `reviewed_all.json`: 200 reviewed samples.
 - `train.jsonl`: 160 samples after stratified split.
 - `validation.jsonl`: 40 samples after stratified split.
+- `base_id`: groups the same input document across all 4 output modes.
 - Each mode has 50 total samples: `concise`, `bullet`, `action_items`, `study_notes`.
+- Each base document has exactly 4 rows, one per mode.
 
 Workflow:
 
-1. Generate or rebuild 200 synthetic meeting, lecture, project, and study samples.
+1. Generate or rebuild 50 base documents x 4 modes.
 2. Review and clean the text manually.
 3. Save the reviewed samples into a JSON array or JSONL file.
-4. Convert them into balanced train/validation JSONL files:
+4. Convert them into base-aware train/validation JSONL files:
 
 ```bash
 python scripts/build_phase2_synthetic_200.py

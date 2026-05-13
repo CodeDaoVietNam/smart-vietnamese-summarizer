@@ -3,7 +3,8 @@ from __future__ import annotations
 from fastapi import FastAPI
 
 from api.dependencies import get_summarizer
-from api.schemas import SummarizeRequest, SummarizeResponse
+from api.schemas import CompareModesRequest, CompareModesResponse, SummarizeRequest, SummarizeResponse
+from smart_summarizer.constants import SUMMARY_MODES
 
 
 app = FastAPI(
@@ -27,3 +28,19 @@ async def summarize(request: SummarizeRequest) -> SummarizeResponse:
         length=request.length,
     )
     return SummarizeResponse(**result)
+
+
+@app.post("/api/compare-modes", response_model=CompareModesResponse)
+async def compare_modes(request: CompareModesRequest) -> CompareModesResponse:
+    summarizer = get_summarizer()
+    results = {
+        mode: SummarizeResponse(
+            **summarizer.generate_summary(
+                text=request.text,
+                mode=mode,
+                length=request.length,
+            )
+        )
+        for mode in SUMMARY_MODES
+    }
+    return CompareModesResponse(results=results)

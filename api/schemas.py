@@ -11,6 +11,11 @@ class SummarizeRequest(BaseModel):
     length: Literal["short", "medium", "long"] = "medium"
 
 
+class CompareModesRequest(BaseModel):
+    text: str = Field(min_length=1)
+    length: Literal["short", "medium", "long"] = "medium"
+
+
 class SummarizeResponse(BaseModel):
     summary: str
     keywords: list[str]
@@ -19,3 +24,7 @@ class SummarizeResponse(BaseModel):
     input_tokens: int
     mode: str
     length: str
+
+
+class CompareModesResponse(BaseModel):
+    results: dict[str, SummarizeResponse]

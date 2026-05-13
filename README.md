@@ -110,20 +110,22 @@ models/vit5-summarizer-v1
 ## Phase 2 Multi-Mode Adaptation
 
 ```bash
-python scripts/generate_synthetic.py
+python scripts/build_phase2_synthetic_200.py
+python scripts/generate_synthetic.py --input data/synthetic/reviewed_all.json
 python scripts/train_phase2.py --config configs/train_phase2.yaml
 ```
 
-Phase 2 uses 50-100 reviewed synthetic meeting and lecture samples to adapt the model to the four output modes:
+Phase 2 uses a paired controllability dataset to adapt the model to the four output modes:
 
 - `concise`
 - `bullet`
 - `action_items`
 - `study_notes`
 
-The current Phase 2 dataset has been expanded to 200 reviewed samples:
+The current Phase 2 dataset has 200 reviewed rows from 50 base documents:
 
 ```text
+50 base documents x 4 modes
 160 train / 40 validation
 50 samples per output mode
 ```
@@ -166,6 +168,8 @@ For qualitative controllability evaluation across all four output modes:
 python scripts/evaluate_modes.py --input data/samples/qualitative_mode_eval.jsonl --length medium
 ```
 
+This writes both JSONL predictions and a grouped Markdown report for reading mode differences side by side.
+
 ## Predict
 
 ```bash
@@ -191,7 +195,7 @@ The app supports:
 - Sample Vietnamese inputs
 - Output mode selection
 - Length control
-- Compare-all-modes view
+- Compare-all-modes view through `POST /api/compare-modes`
 - Keyword display
 - Quality Estimate
 - Input token count

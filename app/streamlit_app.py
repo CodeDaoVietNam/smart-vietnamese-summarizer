@@ -41,6 +41,18 @@ def run_generation(text: str, mode: str, length: str) -> dict:
         return json.loads(response.read().decode("utf-8"))
 
 
+def run_mode_comparison(text: str, length: str) -> dict:
+    payload = json.dumps({"text": text, "length": length}).encode("utf-8")
+    http_request = request.Request(
+        f"{API_BASE_URL}/api/compare-modes",
+        data=payload,
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+    with request.urlopen(http_request, timeout=API_TIMEOUT) as response:
+        return json.loads(response.read().decode("utf-8"))["results"]
+
+
 def check_health() -> tuple[bool, str]:
     try:
         with request.urlopen(f"{API_BASE_URL}/api/health", timeout=5) as response:
@@ -108,13 +120,17 @@ def main() -> None:
         with right:
             st.subheader("Generated")
             if compare:
+                with st.spinner("Generating all modes..."):
+                    comparison = run_mode_comparison(text, length)
                 tabs = st.tabs([MODE_LABELS[key] for key in MODE_LABELS])
                 for tab, mode_key in zip(tabs, MODE_LABELS, strict=True):
                     with tab:
-                        with st.spinner(f"Generating {MODE_LABELS[mode_key]}..."):
-                            result = run_generation(text, mode_key, length)
+                        result = comparison[mode_key]
                         render_summary_box(result["summary"])
                         render_quality_badge(result["quality_estimate"])
+                        metric_cols = st.columns(2)
+                        metric_cols[0].metric("Input tokens", result["input_tokens"])
+                        metric_cols[1].metric("Latency", f"{result['latency_ms']} ms")
             else:
                 with st.spinner("Generating summary..."):
                     result = run_generation(text, mode or "concise", length or "medium")

@@ -4,6 +4,17 @@ Tài liệu này mô tả cách vận hành đồ án sau khi mở rộng synthe
 
 ## 1. Kiến Trúc Vận Hành
 
+Đồ án hiện là **modular 2-service demo**, không phải hệ thống microservices phức tạp.
+
+```text
+Streamlit Frontend
+  -> FastAPI Backend
+  -> SmartSummarizer service layer
+  -> ViT5 checkpoint + tokenizer
+```
+
+Các script như `prepare_data.py`, `train.py`, `train_phase2.py`, `evaluate.py`, `evaluate_modes.py` là offline batch jobs. Nếu trình bày theo microservice architecture, chỉ nên nói rằng frontend và backend là hai service deploy được tách riêng; training/evaluation là pipeline offline.
+
 Đồ án có 3 luồng vận hành chính.
 
 ### Offline training
@@ -47,7 +58,7 @@ ROUGE trên VietNews dùng để so sánh khả năng summarization chung. Mode 
 ```text
 User text + mode + length
   -> Streamlit app
-  -> FastAPI /summarize
+  -> FastAPI /api/summarize hoặc /api/compare-modes
   -> SmartSummarizer.from_config(configs/app.yaml)
   -> build_instruction(mode prefix)
   -> tokenizer + ViT5 generate()
@@ -66,6 +77,14 @@ data/synthetic/train.jsonl
 data/synthetic/validation.jsonl
 ```
 
+Phase 2 hiện dùng paired controllability dataset:
+
+```text
+50 base documents x 4 modes = 200 training rows
+```
+
+Cùng một `base_id` có chung `document` nhưng 4 target summary khác nhau cho `concise`, `bullet`, `action_items`, `study_notes`.
+
 Phân bổ sau khi mở rộng:
 
 | Mode | Train | Validation | Total |
@@ -80,10 +99,10 @@ Phân bổ domain:
 
 | Domain | Total |
 |---|---:|
-| `meeting_notes` | 70 |
-| `lecture_notes` | 70 |
-| `project_updates` | 30 |
-| `study_materials` | 30 |
+| `meeting_notes` | 72 |
+| `lecture_notes` | 72 |
+| `project_updates` | 28 |
+| `study_materials` | 28 |
 
 Để tái tạo dataset 200 mẫu và split 80/20:
 
@@ -121,10 +140,28 @@ Evaluate controllability across modes:
 python scripts/evaluate_modes.py \
   --input data/samples/qualitative_mode_eval.jsonl \
   --config configs/app.yaml \
-  --length medium
+  --length medium \
+  --markdown-output reports/examples/mode_comparison_report.md
 ```
 
-## 4. Acceptance Criteria
+## 4. Backend And Frontend Use Cases
+
+Backend use cases:
+
+- `GET /api/health`: kiểm tra API và model đã load.
+- `POST /api/summarize`: sinh một output theo `text`, `mode`, `length`.
+- `POST /api/compare-modes`: sinh đủ 4 output mode cho cùng một input để demo controllability.
+
+Frontend use cases:
+
+- Chọn sample meeting, lecture hoặc article.
+- Dán văn bản tiếng Việt và chọn mode/length.
+- Generate một summary.
+- Compare all modes trên cùng input bằng `/api/compare-modes`.
+- Hiển thị summary, keywords, quality estimate, token count và latency.
+- Báo lỗi rõ khi backend offline hoặc input rỗng.
+
+## 5. Acceptance Criteria
 
 - `concise`: đoạn văn ngắn, tự nhiên, không bullet.
 - `bullet`: danh sách ý chính, mỗi dòng một ý.
@@ -132,6 +169,6 @@ python scripts/evaluate_modes.py \
 - `study_notes`: ghi chú học tập, nhấn mạnh khái niệm và lỗi dễ nhầm.
 - Cùng một input không được cho 4 output gần như giống nhau rồi chỉ đổi format.
 
-## 5. Experiment Notes
+## 6. Experiment Notes
 
 Không gộp Phase 1 và Phase 2 trong lần chạy chính. Nếu cần experiment phụ sau baseline 200 mẫu, có thể thử mixed replay ở Phase 2 với khoảng 70-80% synthetic và 20-30% VietNews concise để giảm nguy cơ quên năng lực summarization gốc.

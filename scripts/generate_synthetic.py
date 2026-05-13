@@ -146,6 +146,9 @@ def stratified_split(
     validation_ratio: float,
     seed: int,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    if all(row.get("base_id") for row in rows):
+        return base_id_split(rows, validation_ratio, seed)
+
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for row in rows:
         grouped[row["mode"]].append(row)
@@ -174,9 +177,55 @@ def stratified_split(
     return train_rows, validation_rows
 
 
+def base_id_split(
+    rows: list[dict[str, Any]],
+    validation_ratio: float,
+    seed: int,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in rows:
+        grouped[str(row["base_id"])].append(row)
+
+    for base_id, samples in grouped.items():
+        modes = {sample["mode"] for sample in samples}
+        if modes != set(SUMMARY_MODES):
+            raise ValueError(f"{base_id} must contain all modes, got {sorted(modes)}.")
+
+    by_domain: dict[str, list[str]] = defaultdict(list)
+    for base_id, samples in grouped.items():
+        by_domain[str(samples[0].get("domain", "unknown"))].append(base_id)
+
+    randomizer = random.Random(seed)
+    validation_base_ids: set[str] = set()
+    for domain, base_ids in sorted(by_domain.items()):
+        randomizer.shuffle(base_ids)
+        validation_size = round(len(base_ids) * validation_ratio)
+        if len(base_ids) > 1:
+            validation_size = max(1, min(validation_size, len(base_ids) - 1))
+        validation_base_ids.update(base_ids[:validation_size])
+        print(
+            f"Domain {domain}: train_bases={len(base_ids) - validation_size}, "
+            f"validation_bases={validation_size}"
+        )
+
+    train_rows: list[dict[str, Any]] = []
+    validation_rows: list[dict[str, Any]] = []
+    for base_id, samples in grouped.items():
+        target = validation_rows if base_id in validation_base_ids else train_rows
+        target.extend(samples)
+
+    randomizer.shuffle(train_rows)
+    randomizer.shuffle(validation_rows)
+    return train_rows, validation_rows
+
+
 def print_distribution(label: str, rows: list[dict[str, Any]]) -> None:
     counter = Counter(row["mode"] for row in rows)
-    print(f"{label}: {len(rows)} rows -> {dict(counter)}")
+    base_count = len({row.get("base_id") for row in rows if row.get("base_id")})
+    if base_count:
+        print(f"{label}: {len(rows)} rows / {base_count} base docs -> {dict(counter)}")
+    else:
+        print(f"{label}: {len(rows)} rows -> {dict(counter)}")
 
 
 def build_dataset_from_input(args: argparse.Namespace) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:

@@ -35,7 +35,7 @@ flowchart LR
 | Layer | File / Folder | Vai trò |
 |---|---|---|
 | UI | `app/streamlit_app.py` | Giao diện để nhập text, chọn mode, chọn length, xem output |
-| API | `api/main.py` | REST API nhận request từ UI hoặc client khác |
+| API | `api/main.py` | REST API nhận request từ UI hoặc client khác: health, summarize, compare modes |
 | Product service | `src/smart_summarizer/product/summarizer.py` | Điều phối model, generation, keyword, quality |
 | Model loading | `src/smart_summarizer/modeling/model_loader.py` | Load tokenizer/model và chọn device |
 | Generation | `src/smart_summarizer/modeling/generation.py` | Build instruction, set beam search, length control |
@@ -154,6 +154,15 @@ Input API shape:
 }
 ```
 
+Compare modes API shape:
+
+```json
+{
+  "text": "Nội dung tiếng Việt dài...",
+  "length": "medium"
+}
+```
+
 Output API shape:
 
 ```json
@@ -165,6 +174,19 @@ Output API shape:
   "input_tokens": 312,
   "mode": "bullet",
   "length": "medium"
+}
+```
+
+Compare modes response wraps one `SummarizeResponse` per mode:
+
+```json
+{
+  "results": {
+    "concise": {"summary": "...", "mode": "concise"},
+    "bullet": {"summary": "...", "mode": "bullet"},
+    "action_items": {"summary": "...", "mode": "action_items"},
+    "study_notes": {"summary": "...", "mode": "study_notes"}
+  }
 }
 ```
 
@@ -196,11 +218,15 @@ Synthetic format cho Phase 2:
 
 ```json
 {
+  "base_id": "meeting_01",
   "document": "Nội dung meeting hoặc lecture...",
   "summary": "Output mong muốn...",
-  "mode": "action_items"
+  "mode": "action_items",
+  "domain": "meeting_notes"
 }
 ```
+
+Phase 2 hiện dùng paired controllability data: cùng một `base_id` và `document` có 4 target summaries khác nhau, tương ứng 4 output modes.
 
 ---
 
@@ -549,4 +575,3 @@ Production là việc biến chuỗi đó từ "chạy được trên máy mình
 ```text
 chạy lại được, đo được, debug được, rollback được, và người dùng thật dùng được.
 ```
-
