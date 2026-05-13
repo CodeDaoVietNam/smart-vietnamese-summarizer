@@ -121,6 +121,20 @@ Phase 2 uses 50-100 reviewed synthetic meeting and lecture samples to adapt the 
 - `action_items`
 - `study_notes`
 
+The current Phase 2 dataset has been expanded to 200 reviewed samples:
+
+```text
+160 train / 40 validation
+50 samples per output mode
+```
+
+To rebuild the reviewed synthetic dataset and stratified split:
+
+```bash
+python scripts/build_phase2_synthetic_200.py
+python scripts/generate_synthetic.py --input data/synthetic/reviewed_all.json
+```
+
 The final checkpoint is saved to:
 
 ```text
@@ -145,6 +159,12 @@ Main metrics:
 - ROUGE-1
 - ROUGE-2
 - ROUGE-L
+
+For qualitative controllability evaluation across all four output modes:
+
+```bash
+python scripts/evaluate_modes.py --input data/samples/qualitative_mode_eval.jsonl --length medium
+```
 
 ## Predict
 

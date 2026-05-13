@@ -59,7 +59,6 @@
     "mode": "concise",
     "domain": "meeting_notes"
   },
-
   {
     "document": "Buổi họp nhóm phát triển ứng dụng học tập thảo luận về phản hồi của sinh viên sau một tuần dùng thử. Nhiều sinh viên cho biết giao diện tạo ghi chú khá dễ dùng nhưng phần đồng bộ giữa điện thoại và máy tính đôi lúc bị chậm. Nhóm sản phẩm muốn ưu tiên xử lý lỗi đồng bộ trước vì đây là điểm ảnh hưởng lớn đến trải nghiệm. Bộ phận kỹ thuật cũng lưu ý rằng cần bổ sung thêm log để xác định lỗi xảy ra ở phía máy khách hay phía máy chủ. Cả nhóm thống nhất tạm hoãn việc thêm tính năng mới trong tuần này.",
     "summary": "- Sinh viên đánh giá giao diện tạo ghi chú dễ dùng.\n- Lỗi đáng chú ý nhất là đồng bộ giữa điện thoại và máy tính bị chậm.\n- Nhóm ưu tiên sửa lỗi đồng bộ trước khi thêm tính năng mới.\n- Cần bổ sung log để xác định nguyên nhân lỗi.",
@@ -120,7 +119,6 @@
     "mode": "bullet",
     "domain": "meeting_notes"
   },
-
   {
     "document": "Trong buổi họp tổng kết tuần, nhóm thống nhất cần hoàn thiện tài liệu kiến trúc, cập nhật README và kiểm tra lại demo trước khi gửi cho giảng viên. Minh sẽ phụ trách viết lại phần mô tả pipeline training và inference để tài liệu nhất quán hơn với code hiện tại. Lan chịu trách nhiệm rà soát README, đặc biệt là phần hướng dẫn chạy Colab và cấu trúc thư mục artifact. Huy sẽ chạy lại demo với ba input thật khác nhau để ghi nhận lỗi còn sót. Cả nhóm chốt hạn cuối là tối thứ Tư để còn một ngày dự phòng.",
     "summary": "- Minh cập nhật tài liệu kiến trúc và mô tả pipeline training/inference.\n- Lan rà soát README, nhất là phần Colab và artifact.\n- Huy chạy lại demo với ba input thật để kiểm lỗi.\n- Hoàn thành toàn bộ trước tối thứ Tư.",
@@ -181,7 +179,6 @@
     "mode": "action_items",
     "domain": "project_updates"
   },
-
   {
     "document": "Bài giảng hôm nay giới thiệu self-attention như thành phần quan trọng nhất của Transformer. Giảng viên giải thích rằng thay vì xử lý tuần tự từng từ như nhiều mô hình cũ, self-attention cho phép mỗi token xem mối quan hệ của nó với tất cả các token còn lại trong chuỗi. Nhờ vậy mô hình dễ nắm được các phụ thuộc xa và bối cảnh toàn câu. Cuối buổi, giảng viên nhắc sinh viên khi ôn tập cần nhớ rõ ba ý: self-attention dùng để so sánh liên hệ giữa các token, giúp mô hình xử lý song song và đặc biệt hữu ích với văn bản dài.",
     "summary": "- Self-attention là thành phần cốt lõi của Transformer.\n- Mỗi token có thể xét quan hệ với tất cả token còn lại trong chuỗi.\n- Cơ chế này giúp xử lý song song và nắm phụ thuộc xa tốt hơn.\n- Cần ghi nhớ vai trò của self-attention khi ôn tập Transformer.",
@@ -241,5 +238,965 @@
     "summary": "- Quality estimate thường là tín hiệu heuristic, không phải xác suất thật.\n- Nó có thể dựa trên độ dài, mức lặp, độ phủ từ khóa và điểm sinh của mô hình.\n- Người dùng dễ hiểu nhầm nếu không ghi rõ giới hạn.\n- Khi trình bày hệ thống cần mô tả quality estimate như chỉ số tham khảo.",
     "mode": "study_notes",
     "domain": "lecture_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm vận hành sản phẩm tập trung vào việc rà soát tiến độ lỗi đăng nhập và OTP và thống nhất ưu tiên trong tuần. Thảo báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Quân đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Linh nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước cuối ngày mai. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Nhóm vận hành sản phẩm thống nhất ưu tiên ổn định lỗi đăng nhập và OTP, phân chia việc cho Thảo, Quân và Linh, đồng thời cập nhật tài liệu trước cuối ngày mai.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm marketing tuyển sinh tập trung vào việc rà soát tiến độ landing page chiến dịch và thống nhất ưu tiên trong tuần. An báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Bình đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Chi nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước thứ Sáu. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Nhóm marketing tuyển sinh thống nhất ưu tiên ổn định landing page chiến dịch, phân chia việc cho An, Bình và Chi, đồng thời cập nhật tài liệu trước thứ Sáu.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của ban tổ chức hội thảo tập trung vào việc rà soát tiến độ kịch bản check-in và thống nhất ưu tiên trong tuần. Phúc báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Mai đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Duy nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước sáng thứ Hai. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Ban tổ chức hội thảo thống nhất ưu tiên ổn định kịch bản check-in, phân chia việc cho Phúc, Mai và Duy, đồng thời cập nhật tài liệu trước sáng thứ Hai.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm chăm sóc khách hàng tập trung vào việc rà soát tiến độ bộ câu trả lời mẫu và thống nhất ưu tiên trong tuần. Vy báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Nam đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Trúc nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước chiều thứ Tư. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Nhóm chăm sóc khách hàng thống nhất ưu tiên ổn định bộ câu trả lời mẫu, phân chia việc cho Vy, Nam và Trúc, đồng thời cập nhật tài liệu trước chiều thứ Tư.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm kiểm thử phần mềm tập trung vào việc rà soát tiến độ danh sách lỗi ưu tiên và thống nhất ưu tiên trong tuần. Khoa báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Trang đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Long nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước trước buổi demo. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Nhóm kiểm thử phần mềm thống nhất ưu tiên ổn định danh sách lỗi ưu tiên, phân chia việc cho Khoa, Trang và Long, đồng thời cập nhật tài liệu trước trước buổi demo.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm nội dung học tập tập trung vào việc rà soát tiến độ bộ ghi chú ôn thi và thống nhất ưu tiên trong tuần. Ngọc báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Tú đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Sơn nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước cuối tuần. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Nhóm nội dung học tập thống nhất ưu tiên ổn định bộ ghi chú ôn thi, phân chia việc cho Ngọc, Tú và Sơn, đồng thời cập nhật tài liệu trước cuối tuần.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm quản lý dữ liệu tập trung vào việc rà soát tiến độ quy trình kiểm tra chất lượng và thống nhất ưu tiên trong tuần. Hà báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Đức đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Yến nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước ngày 15. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Nhóm quản lý dữ liệu thống nhất ưu tiên ổn định quy trình kiểm tra chất lượng, phân chia việc cho Hà, Đức và Yến, đồng thời cập nhật tài liệu trước ngày 15.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm đồ án NLP tập trung vào việc rà soát tiến độ bản demo tóm tắt và thống nhất ưu tiên trong tuần. Minh báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Lan đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Huy nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước thứ Năm. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Nhóm đồ án nlp thống nhất ưu tiên ổn định bản demo tóm tắt, phân chia việc cho Minh, Lan và Huy, đồng thời cập nhật tài liệu trước thứ Năm.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm vận hành sản phẩm tập trung vào việc rà soát tiến độ lỗi đăng nhập và OTP và thống nhất ưu tiên trong tuần. Thảo báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Quân đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Linh nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước cuối ngày mai. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Nhóm vận hành sản phẩm thống nhất ưu tiên ổn định lỗi đăng nhập và OTP, phân chia việc cho Thảo, Quân và Linh, đồng thời cập nhật tài liệu trước cuối ngày mai.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm marketing tuyển sinh tập trung vào việc rà soát tiến độ landing page chiến dịch và thống nhất ưu tiên trong tuần. An báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Bình đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Chi nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước thứ Sáu. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Nhóm marketing tuyển sinh thống nhất ưu tiên ổn định landing page chiến dịch, phân chia việc cho An, Bình và Chi, đồng thời cập nhật tài liệu trước thứ Sáu.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của ban tổ chức hội thảo tập trung vào việc rà soát tiến độ kịch bản check-in và thống nhất ưu tiên trong tuần. Phúc báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Mai đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Duy nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước sáng thứ Hai. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Ban tổ chức hội thảo thống nhất ưu tiên ổn định kịch bản check-in, phân chia việc cho Phúc, Mai và Duy, đồng thời cập nhật tài liệu trước sáng thứ Hai.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm chăm sóc khách hàng tập trung vào việc rà soát tiến độ bộ câu trả lời mẫu và thống nhất ưu tiên trong tuần. Vy báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Nam đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Trúc nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước chiều thứ Tư. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Nhóm chăm sóc khách hàng thống nhất ưu tiên ổn định bộ câu trả lời mẫu, phân chia việc cho Vy, Nam và Trúc, đồng thời cập nhật tài liệu trước chiều thứ Tư.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm kiểm thử phần mềm tập trung vào việc rà soát tiến độ danh sách lỗi ưu tiên và thống nhất ưu tiên trong tuần. Khoa báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Trang đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Long nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước trước buổi demo. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Nhóm kiểm thử phần mềm thống nhất ưu tiên ổn định danh sách lỗi ưu tiên, phân chia việc cho Khoa, Trang và Long, đồng thời cập nhật tài liệu trước trước buổi demo.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm nội dung học tập tập trung vào việc rà soát tiến độ bộ ghi chú ôn thi và thống nhất ưu tiên trong tuần. Ngọc báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Tú đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Sơn nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước cuối tuần. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Nhóm nội dung học tập thống nhất ưu tiên ổn định bộ ghi chú ôn thi, phân chia việc cho Ngọc, Tú và Sơn, đồng thời cập nhật tài liệu trước cuối tuần.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm quản lý dữ liệu tập trung vào việc rà soát tiến độ quy trình kiểm tra chất lượng và thống nhất ưu tiên trong tuần. Hà báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Đức đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Yến nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước ngày 15. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Nhóm quản lý dữ liệu thống nhất ưu tiên ổn định quy trình kiểm tra chất lượng, phân chia việc cho Hà, Đức và Yến, đồng thời cập nhật tài liệu trước ngày 15.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm đồ án NLP tập trung vào việc rà soát tiến độ bản demo tóm tắt và thống nhất ưu tiên trong tuần. Minh báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Lan đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Huy nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước thứ Năm. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Nhóm đồ án nlp thống nhất ưu tiên ổn định bản demo tóm tắt, phân chia việc cho Minh, Lan và Huy, đồng thời cập nhật tài liệu trước thứ Năm.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm vận hành sản phẩm tập trung vào việc rà soát tiến độ lỗi đăng nhập và OTP và thống nhất ưu tiên trong tuần. Thảo báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Quân đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Linh nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước cuối ngày mai. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Nhóm vận hành sản phẩm thống nhất ưu tiên ổn định lỗi đăng nhập và OTP, phân chia việc cho Thảo, Quân và Linh, đồng thời cập nhật tài liệu trước cuối ngày mai.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm marketing tuyển sinh tập trung vào việc rà soát tiến độ landing page chiến dịch và thống nhất ưu tiên trong tuần. An báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Bình đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Chi nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước thứ Sáu. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Nhóm marketing tuyển sinh thống nhất ưu tiên ổn định landing page chiến dịch, phân chia việc cho An, Bình và Chi, đồng thời cập nhật tài liệu trước thứ Sáu.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của ban tổ chức hội thảo tập trung vào việc rà soát tiến độ kịch bản check-in và thống nhất ưu tiên trong tuần. Phúc báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Mai đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Duy nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước sáng thứ Hai. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Ban tổ chức hội thảo thống nhất ưu tiên ổn định kịch bản check-in, phân chia việc cho Phúc, Mai và Duy, đồng thời cập nhật tài liệu trước sáng thứ Hai.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm chăm sóc khách hàng tập trung vào việc rà soát tiến độ bộ câu trả lời mẫu và thống nhất ưu tiên trong tuần. Vy báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Nam đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Trúc nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước chiều thứ Tư. Nội dung này phù hợp để tạo output dạng concise.",
+    "summary": "Nhóm chăm sóc khách hàng thống nhất ưu tiên ổn định bộ câu trả lời mẫu, phân chia việc cho Vy, Nam và Trúc, đồng thời cập nhật tài liệu trước chiều thứ Tư.",
+    "mode": "concise",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm fine-tuning trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng điều chỉnh mô hình pre-trained trên dataset mục tiêu, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là tiết kiệm tài nguyên hơn train từ đầu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là dễ overfit nếu dữ liệu nhỏ, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode concise.",
+    "summary": "Bài giảng làm rõ fine-tuning: điều chỉnh mô hình pre-trained trên dataset mục tiêu. Khái niệm này quan trọng vì tiết kiệm tài nguyên hơn train từ đầu và cần được ôn cùng ví dụ input-output.",
+    "mode": "concise",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm tokenization trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng chia văn bản thành token hoặc subword, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giúp mô hình xử lý từ hiếm, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nhầm token với từ nguyên vẹn, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode concise.",
+    "summary": "Bài giảng làm rõ tokenization: chia văn bản thành token hoặc subword. Khái niệm này quan trọng vì giúp mô hình xử lý từ hiếm và cần được ôn cùng ví dụ input-output.",
+    "mode": "concise",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm gradient accumulation trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng cộng dồn gradient qua nhiều mini-batch, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giả lập batch lớn trên GPU nhỏ, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là quên chia effective batch size, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode concise.",
+    "summary": "Bài giảng làm rõ gradient accumulation: cộng dồn gradient qua nhiều mini-batch. Khái niệm này quan trọng vì giả lập batch lớn trên GPU nhỏ và cần được ôn cùng ví dụ input-output.",
+    "mode": "concise",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm self-attention trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng mỗi token xét quan hệ với các token khác, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là hiểu được phụ thuộc xa trong câu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nhầm với attention thông thường, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode concise.",
+    "summary": "Bài giảng làm rõ self-attention: mỗi token xét quan hệ với các token khác. Khái niệm này quan trọng vì hiểu được phụ thuộc xa trong câu và cần được ôn cùng ví dụ input-output.",
+    "mode": "concise",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm encoder-decoder trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng encoder đọc input còn decoder sinh output, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là phù hợp bài toán seq2seq, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là quên luồng dữ liệu giữa hai phần, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode concise.",
+    "summary": "Bài giảng làm rõ encoder-decoder: encoder đọc input còn decoder sinh output. Khái niệm này quan trọng vì phù hợp bài toán seq2seq và cần được ôn cùng ví dụ input-output.",
+    "mode": "concise",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm positional encoding trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng bổ sung thông tin thứ tự vào embedding, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là Transformer không xử lý tuần tự như RNN, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nghĩ rằng mô hình tự biết vị trí, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode concise.",
+    "summary": "Bài giảng làm rõ positional encoding: bổ sung thông tin thứ tự vào embedding. Khái niệm này quan trọng vì Transformer không xử lý tuần tự như RNN và cần được ôn cùng ví dụ input-output.",
+    "mode": "concise",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm beam search trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng giữ nhiều giả thuyết sinh văn bản cùng lúc, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giảm rủi ro chọn câu kém từ bước đầu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là chọn beam quá lớn gây chậm, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode concise.",
+    "summary": "Bài giảng làm rõ beam search: giữ nhiều giả thuyết sinh văn bản cùng lúc. Khái niệm này quan trọng vì giảm rủi ro chọn câu kém từ bước đầu và cần được ôn cùng ví dụ input-output.",
+    "mode": "concise",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm ROUGE trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng đo độ trùng lặp từ hoặc chuỗi con với reference, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là hữu ích cho so sánh tự động, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là không đo đầy đủ ý nghĩa, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode concise.",
+    "summary": "Bài giảng làm rõ ROUGE: đo độ trùng lặp từ hoặc chuỗi con với reference. Khái niệm này quan trọng vì hữu ích cho so sánh tự động và cần được ôn cùng ví dụ input-output.",
+    "mode": "concise",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm fine-tuning trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng điều chỉnh mô hình pre-trained trên dataset mục tiêu, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là tiết kiệm tài nguyên hơn train từ đầu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là dễ overfit nếu dữ liệu nhỏ, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode concise.",
+    "summary": "Bài giảng làm rõ fine-tuning: điều chỉnh mô hình pre-trained trên dataset mục tiêu. Khái niệm này quan trọng vì tiết kiệm tài nguyên hơn train từ đầu và cần được ôn cùng ví dụ input-output.",
+    "mode": "concise",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm tokenization trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng chia văn bản thành token hoặc subword, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giúp mô hình xử lý từ hiếm, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nhầm token với từ nguyên vẹn, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode concise.",
+    "summary": "Bài giảng làm rõ tokenization: chia văn bản thành token hoặc subword. Khái niệm này quan trọng vì giúp mô hình xử lý từ hiếm và cần được ôn cùng ví dụ input-output.",
+    "mode": "concise",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án dashboard chăm sóc khách hàng cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là bộ lọc ticket đã rõ hơn, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là biểu đồ theo ngày còn lệch múi giờ, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất rà soát truy vấn, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode concise.",
+    "summary": "Dự án dashboard chăm sóc khách hàng đã có tiến triển ở luồng chính nhưng vẫn còn vấn đề biểu đồ theo ngày còn lệch múi giờ; nhóm sẽ rà soát truy vấn và chuẩn bị số liệu cho buổi báo cáo tới.",
+    "mode": "concise",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án hệ thống học trực tuyến cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là module bài tập đã mở cho lớp thử nghiệm, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là đồng bộ điểm đôi lúc trễ, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất kiểm tra hàng đợi xử lý, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode concise.",
+    "summary": "Dự án hệ thống học trực tuyến đã có tiến triển ở luồng chính nhưng vẫn còn vấn đề đồng bộ điểm đôi lúc trễ; nhóm sẽ kiểm tra hàng đợi xử lý và chuẩn bị số liệu cho buổi báo cáo tới.",
+    "mode": "concise",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án chatbot nội bộ cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là câu trả lời cho FAQ chính xác hơn, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là câu hỏi dài vẫn bị bỏ sót ý, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất bổ sung bước tách yêu cầu, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode concise.",
+    "summary": "Dự án chatbot nội bộ đã có tiến triển ở luồng chính nhưng vẫn còn vấn đề câu hỏi dài vẫn bị bỏ sót ý; nhóm sẽ bổ sung bước tách yêu cầu và chuẩn bị số liệu cho buổi báo cáo tới.",
+    "mode": "concise",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án cổng đăng ký sự kiện cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là luồng đăng ký đã ngắn hơn, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là email xác nhận chưa ổn định, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất kiểm tra dịch vụ gửi mail, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode concise.",
+    "summary": "Dự án cổng đăng ký sự kiện đã có tiến triển ở luồng chính nhưng vẫn còn vấn đề email xác nhận chưa ổn định; nhóm sẽ kiểm tra dịch vụ gửi mail và chuẩn bị số liệu cho buổi báo cáo tới.",
+    "mode": "concise",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập mạng máy tính khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là tóm tắt theo từng tầng giao thức, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm TCP, UDP, DNS, HTTP, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là học rời rạc từng khái niệm, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode concise.",
+    "summary": "Tài liệu ôn tập mạng máy tính khuyên sinh viên tóm tắt theo từng tầng giao thức, tập trung vào TCP, UDP, DNS, HTTP và ghi chú ngắn kèm ví dụ để ôn tập hiệu quả.",
+    "mode": "concise",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập Transformer khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là vẽ sơ đồ encoder-decoder, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm self-attention và positional encoding, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là nhầm vai trò của encoder, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode concise.",
+    "summary": "Tài liệu ôn tập Transformer khuyên sinh viên vẽ sơ đồ encoder-decoder, tập trung vào self-attention và positional encoding và ghi chú ngắn kèm ví dụ để ôn tập hiệu quả.",
+    "mode": "concise",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập cơ sở dữ liệu khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là chia bài theo chuẩn hóa và giao dịch, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm khóa chính, khóa ngoại, ACID, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là học thuộc định nghĩa quá dài, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode concise.",
+    "summary": "Tài liệu ôn tập cơ sở dữ liệu khuyên sinh viên chia bài theo chuẩn hóa và giao dịch, tập trung vào khóa chính, khóa ngoại, ACID và ghi chú ngắn kèm ví dụ để ôn tập hiệu quả.",
+    "mode": "concise",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập học máy khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là lập bảng so sánh mô hình, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm overfitting, regularization, validation, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là chỉ nhớ tên thuật toán, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode concise.",
+    "summary": "Tài liệu ôn tập học máy khuyên sinh viên lập bảng so sánh mô hình, tập trung vào overfitting, regularization, validation và ghi chú ngắn kèm ví dụ để ôn tập hiệu quả.",
+    "mode": "concise",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập NLP khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là ghi ví dụ input-output cho từng task, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm tokenization, embedding, seq2seq, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là không phân biệt training và inference, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode concise.",
+    "summary": "Tài liệu ôn tập NLP khuyên sinh viên ghi ví dụ input-output cho từng task, tập trung vào tokenization, embedding, seq2seq và ghi chú ngắn kèm ví dụ để ôn tập hiệu quả.",
+    "mode": "concise",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập kiểm thử phần mềm khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là gom lỗi theo mức độ nghiêm trọng, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm unit test, integration test, regression test, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là viết test thiếu expected behavior, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode concise.",
+    "summary": "Tài liệu ôn tập kiểm thử phần mềm khuyên sinh viên gom lỗi theo mức độ nghiêm trọng, tập trung vào unit test, integration test, regression test và ghi chú ngắn kèm ví dụ để ôn tập hiệu quả.",
+    "mode": "concise",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Cuộc họp của nhóm vận hành sản phẩm tập trung vào việc rà soát tiến độ lỗi đăng nhập và OTP và thống nhất ưu tiên trong tuần. Thảo báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Quân đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Linh nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước cuối ngày mai. Nội dung này phù hợp để tạo output dạng bullet.",
+    "summary": "- Nhóm vận hành sản phẩm rà soát tiến độ lỗi đăng nhập và OTP.\n- Thảo kiểm tra các tình huống biên còn lại.\n- Quân phân loại lỗi theo mức độ ảnh hưởng.\n- Linh cập nhật tài liệu demo trước cuối ngày mai.",
+    "mode": "bullet",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm marketing tuyển sinh tập trung vào việc rà soát tiến độ landing page chiến dịch và thống nhất ưu tiên trong tuần. An báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Bình đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Chi nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước thứ Sáu. Nội dung này phù hợp để tạo output dạng bullet.",
+    "summary": "- Nhóm marketing tuyển sinh rà soát tiến độ landing page chiến dịch.\n- An kiểm tra các tình huống biên còn lại.\n- Bình phân loại lỗi theo mức độ ảnh hưởng.\n- Chi cập nhật tài liệu demo trước thứ Sáu.",
+    "mode": "bullet",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của ban tổ chức hội thảo tập trung vào việc rà soát tiến độ kịch bản check-in và thống nhất ưu tiên trong tuần. Phúc báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Mai đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Duy nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước sáng thứ Hai. Nội dung này phù hợp để tạo output dạng bullet.",
+    "summary": "- Ban tổ chức hội thảo rà soát tiến độ kịch bản check-in.\n- Phúc kiểm tra các tình huống biên còn lại.\n- Mai phân loại lỗi theo mức độ ảnh hưởng.\n- Duy cập nhật tài liệu demo trước sáng thứ Hai.",
+    "mode": "bullet",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm chăm sóc khách hàng tập trung vào việc rà soát tiến độ bộ câu trả lời mẫu và thống nhất ưu tiên trong tuần. Vy báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Nam đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Trúc nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước chiều thứ Tư. Nội dung này phù hợp để tạo output dạng bullet.",
+    "summary": "- Nhóm chăm sóc khách hàng rà soát tiến độ bộ câu trả lời mẫu.\n- Vy kiểm tra các tình huống biên còn lại.\n- Nam phân loại lỗi theo mức độ ảnh hưởng.\n- Trúc cập nhật tài liệu demo trước chiều thứ Tư.",
+    "mode": "bullet",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm kiểm thử phần mềm tập trung vào việc rà soát tiến độ danh sách lỗi ưu tiên và thống nhất ưu tiên trong tuần. Khoa báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Trang đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Long nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước trước buổi demo. Nội dung này phù hợp để tạo output dạng bullet.",
+    "summary": "- Nhóm kiểm thử phần mềm rà soát tiến độ danh sách lỗi ưu tiên.\n- Khoa kiểm tra các tình huống biên còn lại.\n- Trang phân loại lỗi theo mức độ ảnh hưởng.\n- Long cập nhật tài liệu demo trước trước buổi demo.",
+    "mode": "bullet",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm nội dung học tập tập trung vào việc rà soát tiến độ bộ ghi chú ôn thi và thống nhất ưu tiên trong tuần. Ngọc báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Tú đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Sơn nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước cuối tuần. Nội dung này phù hợp để tạo output dạng bullet.",
+    "summary": "- Nhóm nội dung học tập rà soát tiến độ bộ ghi chú ôn thi.\n- Ngọc kiểm tra các tình huống biên còn lại.\n- Tú phân loại lỗi theo mức độ ảnh hưởng.\n- Sơn cập nhật tài liệu demo trước cuối tuần.",
+    "mode": "bullet",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm quản lý dữ liệu tập trung vào việc rà soát tiến độ quy trình kiểm tra chất lượng và thống nhất ưu tiên trong tuần. Hà báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Đức đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Yến nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước ngày 15. Nội dung này phù hợp để tạo output dạng bullet.",
+    "summary": "- Nhóm quản lý dữ liệu rà soát tiến độ quy trình kiểm tra chất lượng.\n- Hà kiểm tra các tình huống biên còn lại.\n- Đức phân loại lỗi theo mức độ ảnh hưởng.\n- Yến cập nhật tài liệu demo trước ngày 15.",
+    "mode": "bullet",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm đồ án NLP tập trung vào việc rà soát tiến độ bản demo tóm tắt và thống nhất ưu tiên trong tuần. Minh báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Lan đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Huy nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước thứ Năm. Nội dung này phù hợp để tạo output dạng bullet.",
+    "summary": "- Nhóm đồ án nlp rà soát tiến độ bản demo tóm tắt.\n- Minh kiểm tra các tình huống biên còn lại.\n- Lan phân loại lỗi theo mức độ ảnh hưởng.\n- Huy cập nhật tài liệu demo trước thứ Năm.",
+    "mode": "bullet",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm vận hành sản phẩm tập trung vào việc rà soát tiến độ lỗi đăng nhập và OTP và thống nhất ưu tiên trong tuần. Thảo báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Quân đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Linh nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước cuối ngày mai. Nội dung này phù hợp để tạo output dạng bullet.",
+    "summary": "- Nhóm vận hành sản phẩm rà soát tiến độ lỗi đăng nhập và OTP.\n- Thảo kiểm tra các tình huống biên còn lại.\n- Quân phân loại lỗi theo mức độ ảnh hưởng.\n- Linh cập nhật tài liệu demo trước cuối ngày mai.",
+    "mode": "bullet",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm marketing tuyển sinh tập trung vào việc rà soát tiến độ landing page chiến dịch và thống nhất ưu tiên trong tuần. An báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Bình đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Chi nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước thứ Sáu. Nội dung này phù hợp để tạo output dạng bullet.",
+    "summary": "- Nhóm marketing tuyển sinh rà soát tiến độ landing page chiến dịch.\n- An kiểm tra các tình huống biên còn lại.\n- Bình phân loại lỗi theo mức độ ảnh hưởng.\n- Chi cập nhật tài liệu demo trước thứ Sáu.",
+    "mode": "bullet",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của ban tổ chức hội thảo tập trung vào việc rà soát tiến độ kịch bản check-in và thống nhất ưu tiên trong tuần. Phúc báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Mai đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Duy nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước sáng thứ Hai. Nội dung này phù hợp để tạo output dạng bullet.",
+    "summary": "- Ban tổ chức hội thảo rà soát tiến độ kịch bản check-in.\n- Phúc kiểm tra các tình huống biên còn lại.\n- Mai phân loại lỗi theo mức độ ảnh hưởng.\n- Duy cập nhật tài liệu demo trước sáng thứ Hai.",
+    "mode": "bullet",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm chăm sóc khách hàng tập trung vào việc rà soát tiến độ bộ câu trả lời mẫu và thống nhất ưu tiên trong tuần. Vy báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Nam đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Trúc nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước chiều thứ Tư. Nội dung này phù hợp để tạo output dạng bullet.",
+    "summary": "- Nhóm chăm sóc khách hàng rà soát tiến độ bộ câu trả lời mẫu.\n- Vy kiểm tra các tình huống biên còn lại.\n- Nam phân loại lỗi theo mức độ ảnh hưởng.\n- Trúc cập nhật tài liệu demo trước chiều thứ Tư.",
+    "mode": "bullet",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm fine-tuning trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng điều chỉnh mô hình pre-trained trên dataset mục tiêu, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là tiết kiệm tài nguyên hơn train từ đầu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là dễ overfit nếu dữ liệu nhỏ, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode bullet.",
+    "summary": "- fine-tuning có ý nghĩa: điều chỉnh mô hình pre-trained trên dataset mục tiêu.\n- Lợi ích chính: tiết kiệm tài nguyên hơn train từ đầu.\n- Lỗi hay gặp: dễ overfit nếu dữ liệu nhỏ.\n- Khi ôn tập nên thêm ví dụ input-output.",
+    "mode": "bullet",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm tokenization trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng chia văn bản thành token hoặc subword, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giúp mô hình xử lý từ hiếm, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nhầm token với từ nguyên vẹn, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode bullet.",
+    "summary": "- tokenization có ý nghĩa: chia văn bản thành token hoặc subword.\n- Lợi ích chính: giúp mô hình xử lý từ hiếm.\n- Lỗi hay gặp: nhầm token với từ nguyên vẹn.\n- Khi ôn tập nên thêm ví dụ input-output.",
+    "mode": "bullet",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm gradient accumulation trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng cộng dồn gradient qua nhiều mini-batch, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giả lập batch lớn trên GPU nhỏ, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là quên chia effective batch size, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode bullet.",
+    "summary": "- gradient accumulation có ý nghĩa: cộng dồn gradient qua nhiều mini-batch.\n- Lợi ích chính: giả lập batch lớn trên GPU nhỏ.\n- Lỗi hay gặp: quên chia effective batch size.\n- Khi ôn tập nên thêm ví dụ input-output.",
+    "mode": "bullet",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm self-attention trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng mỗi token xét quan hệ với các token khác, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là hiểu được phụ thuộc xa trong câu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nhầm với attention thông thường, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode bullet.",
+    "summary": "- self-attention có ý nghĩa: mỗi token xét quan hệ với các token khác.\n- Lợi ích chính: hiểu được phụ thuộc xa trong câu.\n- Lỗi hay gặp: nhầm với attention thông thường.\n- Khi ôn tập nên thêm ví dụ input-output.",
+    "mode": "bullet",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm encoder-decoder trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng encoder đọc input còn decoder sinh output, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là phù hợp bài toán seq2seq, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là quên luồng dữ liệu giữa hai phần, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode bullet.",
+    "summary": "- encoder-decoder có ý nghĩa: encoder đọc input còn decoder sinh output.\n- Lợi ích chính: phù hợp bài toán seq2seq.\n- Lỗi hay gặp: quên luồng dữ liệu giữa hai phần.\n- Khi ôn tập nên thêm ví dụ input-output.",
+    "mode": "bullet",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm positional encoding trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng bổ sung thông tin thứ tự vào embedding, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là Transformer không xử lý tuần tự như RNN, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nghĩ rằng mô hình tự biết vị trí, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode bullet.",
+    "summary": "- positional encoding có ý nghĩa: bổ sung thông tin thứ tự vào embedding.\n- Lợi ích chính: Transformer không xử lý tuần tự như RNN.\n- Lỗi hay gặp: nghĩ rằng mô hình tự biết vị trí.\n- Khi ôn tập nên thêm ví dụ input-output.",
+    "mode": "bullet",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm beam search trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng giữ nhiều giả thuyết sinh văn bản cùng lúc, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giảm rủi ro chọn câu kém từ bước đầu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là chọn beam quá lớn gây chậm, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode bullet.",
+    "summary": "- beam search có ý nghĩa: giữ nhiều giả thuyết sinh văn bản cùng lúc.\n- Lợi ích chính: giảm rủi ro chọn câu kém từ bước đầu.\n- Lỗi hay gặp: chọn beam quá lớn gây chậm.\n- Khi ôn tập nên thêm ví dụ input-output.",
+    "mode": "bullet",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm ROUGE trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng đo độ trùng lặp từ hoặc chuỗi con với reference, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là hữu ích cho so sánh tự động, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là không đo đầy đủ ý nghĩa, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode bullet.",
+    "summary": "- ROUGE có ý nghĩa: đo độ trùng lặp từ hoặc chuỗi con với reference.\n- Lợi ích chính: hữu ích cho so sánh tự động.\n- Lỗi hay gặp: không đo đầy đủ ý nghĩa.\n- Khi ôn tập nên thêm ví dụ input-output.",
+    "mode": "bullet",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm fine-tuning trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng điều chỉnh mô hình pre-trained trên dataset mục tiêu, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là tiết kiệm tài nguyên hơn train từ đầu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là dễ overfit nếu dữ liệu nhỏ, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode bullet.",
+    "summary": "- fine-tuning có ý nghĩa: điều chỉnh mô hình pre-trained trên dataset mục tiêu.\n- Lợi ích chính: tiết kiệm tài nguyên hơn train từ đầu.\n- Lỗi hay gặp: dễ overfit nếu dữ liệu nhỏ.\n- Khi ôn tập nên thêm ví dụ input-output.",
+    "mode": "bullet",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm tokenization trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng chia văn bản thành token hoặc subword, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giúp mô hình xử lý từ hiếm, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nhầm token với từ nguyên vẹn, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode bullet.",
+    "summary": "- tokenization có ý nghĩa: chia văn bản thành token hoặc subword.\n- Lợi ích chính: giúp mô hình xử lý từ hiếm.\n- Lỗi hay gặp: nhầm token với từ nguyên vẹn.\n- Khi ôn tập nên thêm ví dụ input-output.",
+    "mode": "bullet",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm gradient accumulation trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng cộng dồn gradient qua nhiều mini-batch, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giả lập batch lớn trên GPU nhỏ, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là quên chia effective batch size, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode bullet.",
+    "summary": "- gradient accumulation có ý nghĩa: cộng dồn gradient qua nhiều mini-batch.\n- Lợi ích chính: giả lập batch lớn trên GPU nhỏ.\n- Lỗi hay gặp: quên chia effective batch size.\n- Khi ôn tập nên thêm ví dụ input-output.",
+    "mode": "bullet",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm self-attention trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng mỗi token xét quan hệ với các token khác, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là hiểu được phụ thuộc xa trong câu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nhầm với attention thông thường, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode bullet.",
+    "summary": "- self-attention có ý nghĩa: mỗi token xét quan hệ với các token khác.\n- Lợi ích chính: hiểu được phụ thuộc xa trong câu.\n- Lỗi hay gặp: nhầm với attention thông thường.\n- Khi ôn tập nên thêm ví dụ input-output.",
+    "mode": "bullet",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm encoder-decoder trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng encoder đọc input còn decoder sinh output, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là phù hợp bài toán seq2seq, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là quên luồng dữ liệu giữa hai phần, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode bullet.",
+    "summary": "- encoder-decoder có ý nghĩa: encoder đọc input còn decoder sinh output.\n- Lợi ích chính: phù hợp bài toán seq2seq.\n- Lỗi hay gặp: quên luồng dữ liệu giữa hai phần.\n- Khi ôn tập nên thêm ví dụ input-output.",
+    "mode": "bullet",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm positional encoding trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng bổ sung thông tin thứ tự vào embedding, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là Transformer không xử lý tuần tự như RNN, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nghĩ rằng mô hình tự biết vị trí, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode bullet.",
+    "summary": "- positional encoding có ý nghĩa: bổ sung thông tin thứ tự vào embedding.\n- Lợi ích chính: Transformer không xử lý tuần tự như RNN.\n- Lỗi hay gặp: nghĩ rằng mô hình tự biết vị trí.\n- Khi ôn tập nên thêm ví dụ input-output.",
+    "mode": "bullet",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm beam search trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng giữ nhiều giả thuyết sinh văn bản cùng lúc, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giảm rủi ro chọn câu kém từ bước đầu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là chọn beam quá lớn gây chậm, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode bullet.",
+    "summary": "- beam search có ý nghĩa: giữ nhiều giả thuyết sinh văn bản cùng lúc.\n- Lợi ích chính: giảm rủi ro chọn câu kém từ bước đầu.\n- Lỗi hay gặp: chọn beam quá lớn gây chậm.\n- Khi ôn tập nên thêm ví dụ input-output.",
+    "mode": "bullet",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm ROUGE trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng đo độ trùng lặp từ hoặc chuỗi con với reference, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là hữu ích cho so sánh tự động, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là không đo đầy đủ ý nghĩa, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode bullet.",
+    "summary": "- ROUGE có ý nghĩa: đo độ trùng lặp từ hoặc chuỗi con với reference.\n- Lợi ích chính: hữu ích cho so sánh tự động.\n- Lỗi hay gặp: không đo đầy đủ ý nghĩa.\n- Khi ôn tập nên thêm ví dụ input-output.",
+    "mode": "bullet",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án chatbot nội bộ cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là câu trả lời cho FAQ chính xác hơn, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là câu hỏi dài vẫn bị bỏ sót ý, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất bổ sung bước tách yêu cầu, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode bullet.",
+    "summary": "- Dự án chatbot nội bộ đã ghi nhận tiến triển: câu trả lời cho FAQ chính xác hơn.\n- Vấn đề còn lại là câu hỏi dài vẫn bị bỏ sót ý.\n- Nhóm kỹ thuật sẽ bổ sung bước tách yêu cầu.\n- Tuần tới ưu tiên sửa lỗi ảnh hưởng trực tiếp đến demo.",
+    "mode": "bullet",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án cổng đăng ký sự kiện cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là luồng đăng ký đã ngắn hơn, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là email xác nhận chưa ổn định, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất kiểm tra dịch vụ gửi mail, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode bullet.",
+    "summary": "- Dự án cổng đăng ký sự kiện đã ghi nhận tiến triển: luồng đăng ký đã ngắn hơn.\n- Vấn đề còn lại là email xác nhận chưa ổn định.\n- Nhóm kỹ thuật sẽ kiểm tra dịch vụ gửi mail.\n- Tuần tới ưu tiên sửa lỗi ảnh hưởng trực tiếp đến demo.",
+    "mode": "bullet",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án bộ công cụ phân tích phản hồi cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là pipeline làm sạch dữ liệu đã chạy tự động, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là nhãn lỗi còn chưa nhất quán, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất review lại guideline gán nhãn, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode bullet.",
+    "summary": "- Dự án bộ công cụ phân tích phản hồi đã ghi nhận tiến triển: pipeline làm sạch dữ liệu đã chạy tự động.\n- Vấn đề còn lại là nhãn lỗi còn chưa nhất quán.\n- Nhóm kỹ thuật sẽ review lại guideline gán nhãn.\n- Tuần tới ưu tiên sửa lỗi ảnh hưởng trực tiếp đến demo.",
+    "mode": "bullet",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án ứng dụng tóm tắt văn bản cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là API xử lý ổn định hơn, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là giao diện so sánh mode còn chậm, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất thêm log latency, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode bullet.",
+    "summary": "- Dự án ứng dụng tóm tắt văn bản đã ghi nhận tiến triển: API xử lý ổn định hơn.\n- Vấn đề còn lại là giao diện so sánh mode còn chậm.\n- Nhóm kỹ thuật sẽ thêm log latency.\n- Tuần tới ưu tiên sửa lỗi ảnh hưởng trực tiếp đến demo.",
+    "mode": "bullet",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án dashboard chăm sóc khách hàng cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là bộ lọc ticket đã rõ hơn, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là biểu đồ theo ngày còn lệch múi giờ, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất rà soát truy vấn, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode bullet.",
+    "summary": "- Dự án dashboard chăm sóc khách hàng đã ghi nhận tiến triển: bộ lọc ticket đã rõ hơn.\n- Vấn đề còn lại là biểu đồ theo ngày còn lệch múi giờ.\n- Nhóm kỹ thuật sẽ rà soát truy vấn.\n- Tuần tới ưu tiên sửa lỗi ảnh hưởng trực tiếp đến demo.",
+    "mode": "bullet",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án hệ thống học trực tuyến cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là module bài tập đã mở cho lớp thử nghiệm, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là đồng bộ điểm đôi lúc trễ, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất kiểm tra hàng đợi xử lý, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode bullet.",
+    "summary": "- Dự án hệ thống học trực tuyến đã ghi nhận tiến triển: module bài tập đã mở cho lớp thử nghiệm.\n- Vấn đề còn lại là đồng bộ điểm đôi lúc trễ.\n- Nhóm kỹ thuật sẽ kiểm tra hàng đợi xử lý.\n- Tuần tới ưu tiên sửa lỗi ảnh hưởng trực tiếp đến demo.",
+    "mode": "bullet",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập NLP khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là ghi ví dụ input-output cho từng task, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm tokenization, embedding, seq2seq, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là không phân biệt training và inference, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode bullet.",
+    "summary": "- Chủ đề ôn tập: ôn tập NLP.\n- Cách học nên dùng: ghi ví dụ input-output cho từng task.\n- Cần tập trung vào tokenization, embedding, seq2seq.\n- Tránh lỗi: không phân biệt training và inference.",
+    "mode": "bullet",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập kiểm thử phần mềm khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là gom lỗi theo mức độ nghiêm trọng, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm unit test, integration test, regression test, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là viết test thiếu expected behavior, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode bullet.",
+    "summary": "- Chủ đề ôn tập: ôn tập kiểm thử phần mềm.\n- Cách học nên dùng: gom lỗi theo mức độ nghiêm trọng.\n- Cần tập trung vào unit test, integration test, regression test.\n- Tránh lỗi: viết test thiếu expected behavior.",
+    "mode": "bullet",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập mạng máy tính khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là tóm tắt theo từng tầng giao thức, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm TCP, UDP, DNS, HTTP, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là học rời rạc từng khái niệm, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode bullet.",
+    "summary": "- Chủ đề ôn tập: ôn tập mạng máy tính.\n- Cách học nên dùng: tóm tắt theo từng tầng giao thức.\n- Cần tập trung vào TCP, UDP, DNS, HTTP.\n- Tránh lỗi: học rời rạc từng khái niệm.",
+    "mode": "bullet",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập Transformer khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là vẽ sơ đồ encoder-decoder, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm self-attention và positional encoding, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là nhầm vai trò của encoder, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode bullet.",
+    "summary": "- Chủ đề ôn tập: ôn tập Transformer.\n- Cách học nên dùng: vẽ sơ đồ encoder-decoder.\n- Cần tập trung vào self-attention và positional encoding.\n- Tránh lỗi: nhầm vai trò của encoder.",
+    "mode": "bullet",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập cơ sở dữ liệu khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là chia bài theo chuẩn hóa và giao dịch, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm khóa chính, khóa ngoại, ACID, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là học thuộc định nghĩa quá dài, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode bullet.",
+    "summary": "- Chủ đề ôn tập: ôn tập cơ sở dữ liệu.\n- Cách học nên dùng: chia bài theo chuẩn hóa và giao dịch.\n- Cần tập trung vào khóa chính, khóa ngoại, ACID.\n- Tránh lỗi: học thuộc định nghĩa quá dài.",
+    "mode": "bullet",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập học máy khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là lập bảng so sánh mô hình, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm overfitting, regularization, validation, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là chỉ nhớ tên thuật toán, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode bullet.",
+    "summary": "- Chủ đề ôn tập: ôn tập học máy.\n- Cách học nên dùng: lập bảng so sánh mô hình.\n- Cần tập trung vào overfitting, regularization, validation.\n- Tránh lỗi: chỉ nhớ tên thuật toán.",
+    "mode": "bullet",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Cuộc họp của nhóm vận hành sản phẩm tập trung vào việc rà soát tiến độ lỗi đăng nhập và OTP và thống nhất ưu tiên trong tuần. Thảo báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Quân đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Linh nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước cuối ngày mai. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Thảo kiểm tra các tình huống biên của lỗi đăng nhập và OTP trước cuối ngày mai.\n- Quân phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Linh cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm marketing tuyển sinh tập trung vào việc rà soát tiến độ landing page chiến dịch và thống nhất ưu tiên trong tuần. An báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Bình đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Chi nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước thứ Sáu. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- An kiểm tra các tình huống biên của landing page chiến dịch trước thứ Sáu.\n- Bình phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Chi cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của ban tổ chức hội thảo tập trung vào việc rà soát tiến độ kịch bản check-in và thống nhất ưu tiên trong tuần. Phúc báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Mai đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Duy nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước sáng thứ Hai. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Phúc kiểm tra các tình huống biên của kịch bản check-in trước sáng thứ Hai.\n- Mai phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Duy cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm chăm sóc khách hàng tập trung vào việc rà soát tiến độ bộ câu trả lời mẫu và thống nhất ưu tiên trong tuần. Vy báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Nam đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Trúc nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước chiều thứ Tư. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Vy kiểm tra các tình huống biên của bộ câu trả lời mẫu trước chiều thứ Tư.\n- Nam phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Trúc cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm kiểm thử phần mềm tập trung vào việc rà soát tiến độ danh sách lỗi ưu tiên và thống nhất ưu tiên trong tuần. Khoa báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Trang đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Long nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước trước buổi demo. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Khoa kiểm tra các tình huống biên của danh sách lỗi ưu tiên trước trước buổi demo.\n- Trang phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Long cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm nội dung học tập tập trung vào việc rà soát tiến độ bộ ghi chú ôn thi và thống nhất ưu tiên trong tuần. Ngọc báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Tú đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Sơn nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước cuối tuần. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Ngọc kiểm tra các tình huống biên của bộ ghi chú ôn thi trước cuối tuần.\n- Tú phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Sơn cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm quản lý dữ liệu tập trung vào việc rà soát tiến độ quy trình kiểm tra chất lượng và thống nhất ưu tiên trong tuần. Hà báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Đức đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Yến nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước ngày 15. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Hà kiểm tra các tình huống biên của quy trình kiểm tra chất lượng trước ngày 15.\n- Đức phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Yến cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm đồ án NLP tập trung vào việc rà soát tiến độ bản demo tóm tắt và thống nhất ưu tiên trong tuần. Minh báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Lan đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Huy nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước thứ Năm. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Minh kiểm tra các tình huống biên của bản demo tóm tắt trước thứ Năm.\n- Lan phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Huy cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm vận hành sản phẩm tập trung vào việc rà soát tiến độ lỗi đăng nhập và OTP và thống nhất ưu tiên trong tuần. Thảo báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Quân đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Linh nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước cuối ngày mai. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Thảo kiểm tra các tình huống biên của lỗi đăng nhập và OTP trước cuối ngày mai.\n- Quân phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Linh cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm marketing tuyển sinh tập trung vào việc rà soát tiến độ landing page chiến dịch và thống nhất ưu tiên trong tuần. An báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Bình đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Chi nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước thứ Sáu. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- An kiểm tra các tình huống biên của landing page chiến dịch trước thứ Sáu.\n- Bình phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Chi cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của ban tổ chức hội thảo tập trung vào việc rà soát tiến độ kịch bản check-in và thống nhất ưu tiên trong tuần. Phúc báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Mai đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Duy nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước sáng thứ Hai. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Phúc kiểm tra các tình huống biên của kịch bản check-in trước sáng thứ Hai.\n- Mai phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Duy cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm chăm sóc khách hàng tập trung vào việc rà soát tiến độ bộ câu trả lời mẫu và thống nhất ưu tiên trong tuần. Vy báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Nam đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Trúc nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước chiều thứ Tư. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Vy kiểm tra các tình huống biên của bộ câu trả lời mẫu trước chiều thứ Tư.\n- Nam phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Trúc cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm kiểm thử phần mềm tập trung vào việc rà soát tiến độ danh sách lỗi ưu tiên và thống nhất ưu tiên trong tuần. Khoa báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Trang đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Long nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước trước buổi demo. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Khoa kiểm tra các tình huống biên của danh sách lỗi ưu tiên trước trước buổi demo.\n- Trang phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Long cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm nội dung học tập tập trung vào việc rà soát tiến độ bộ ghi chú ôn thi và thống nhất ưu tiên trong tuần. Ngọc báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Tú đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Sơn nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước cuối tuần. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Ngọc kiểm tra các tình huống biên của bộ ghi chú ôn thi trước cuối tuần.\n- Tú phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Sơn cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm quản lý dữ liệu tập trung vào việc rà soát tiến độ quy trình kiểm tra chất lượng và thống nhất ưu tiên trong tuần. Hà báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Đức đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Yến nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước ngày 15. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Hà kiểm tra các tình huống biên của quy trình kiểm tra chất lượng trước ngày 15.\n- Đức phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Yến cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm đồ án NLP tập trung vào việc rà soát tiến độ bản demo tóm tắt và thống nhất ưu tiên trong tuần. Minh báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Lan đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Huy nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước thứ Năm. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Minh kiểm tra các tình huống biên của bản demo tóm tắt trước thứ Năm.\n- Lan phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Huy cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm vận hành sản phẩm tập trung vào việc rà soát tiến độ lỗi đăng nhập và OTP và thống nhất ưu tiên trong tuần. Thảo báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Quân đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Linh nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước cuối ngày mai. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Thảo kiểm tra các tình huống biên của lỗi đăng nhập và OTP trước cuối ngày mai.\n- Quân phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Linh cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm marketing tuyển sinh tập trung vào việc rà soát tiến độ landing page chiến dịch và thống nhất ưu tiên trong tuần. An báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Bình đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Chi nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước thứ Sáu. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- An kiểm tra các tình huống biên của landing page chiến dịch trước thứ Sáu.\n- Bình phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Chi cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của ban tổ chức hội thảo tập trung vào việc rà soát tiến độ kịch bản check-in và thống nhất ưu tiên trong tuần. Phúc báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Mai đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Duy nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước sáng thứ Hai. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Phúc kiểm tra các tình huống biên của kịch bản check-in trước sáng thứ Hai.\n- Mai phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Duy cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm chăm sóc khách hàng tập trung vào việc rà soát tiến độ bộ câu trả lời mẫu và thống nhất ưu tiên trong tuần. Vy báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Nam đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Trúc nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước chiều thứ Tư. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Vy kiểm tra các tình huống biên của bộ câu trả lời mẫu trước chiều thứ Tư.\n- Nam phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Trúc cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm kiểm thử phần mềm tập trung vào việc rà soát tiến độ danh sách lỗi ưu tiên và thống nhất ưu tiên trong tuần. Khoa báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Trang đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Long nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước trước buổi demo. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Khoa kiểm tra các tình huống biên của danh sách lỗi ưu tiên trước trước buổi demo.\n- Trang phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Long cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm nội dung học tập tập trung vào việc rà soát tiến độ bộ ghi chú ôn thi và thống nhất ưu tiên trong tuần. Ngọc báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Tú đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Sơn nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước cuối tuần. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Ngọc kiểm tra các tình huống biên của bộ ghi chú ôn thi trước cuối tuần.\n- Tú phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Sơn cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm quản lý dữ liệu tập trung vào việc rà soát tiến độ quy trình kiểm tra chất lượng và thống nhất ưu tiên trong tuần. Hà báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Đức đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Yến nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước ngày 15. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Hà kiểm tra các tình huống biên của quy trình kiểm tra chất lượng trước ngày 15.\n- Đức phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Yến cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Cuộc họp của nhóm đồ án NLP tập trung vào việc rà soát tiến độ bản demo tóm tắt và thống nhất ưu tiên trong tuần. Minh báo cáo rằng phần chính đã hoàn thành nhưng vẫn còn một số tình huống biên cần kiểm tra kỹ hơn. Lan đề xuất tách các lỗi theo mức độ ảnh hưởng để nhóm không mất thời gian vào những việc ít quan trọng. Huy nhắc rằng tài liệu demo cũng cần cập nhật song song, vì người xem sẽ hỏi vì sao nhóm chọn cách xử lý hiện tại. Sau khi thảo luận, cả nhóm thống nhất giữ phạm vi vừa đủ, ưu tiên ổn định trải nghiệm chính, ghi lại rủi ro còn tồn tại và hoàn thành phần việc được giao trước thứ Năm. Nội dung này phù hợp để tạo output dạng action_items.",
+    "summary": "- Minh kiểm tra các tình huống biên của bản demo tóm tắt trước thứ Năm.\n- Lan phân loại lỗi theo mức độ ảnh hưởng và gửi danh sách ưu tiên.\n- Huy cập nhật tài liệu demo để phản ánh quyết định mới.\n- Cả nhóm chạy thử luồng chính trước buổi báo cáo.",
+    "mode": "action_items",
+    "domain": "meeting_notes"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án chatbot nội bộ cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là câu trả lời cho FAQ chính xác hơn, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là câu hỏi dài vẫn bị bỏ sót ý, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất bổ sung bước tách yêu cầu, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode action_items.",
+    "summary": "- Nhóm kỹ thuật bổ sung bước tách yêu cầu cho dự án chatbot nội bộ.\n- Nhóm sản phẩm tổng hợp phản hồi liên quan đến câu hỏi dài vẫn bị bỏ sót ý.\n- Trưởng nhóm chốt danh sách lỗi ảnh hưởng trực tiếp đến demo.\n- Các bên cập nhật tiến độ trong buổi họp sprint tiếp theo.",
+    "mode": "action_items",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án cổng đăng ký sự kiện cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là luồng đăng ký đã ngắn hơn, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là email xác nhận chưa ổn định, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất kiểm tra dịch vụ gửi mail, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode action_items.",
+    "summary": "- Nhóm kỹ thuật kiểm tra dịch vụ gửi mail cho dự án cổng đăng ký sự kiện.\n- Nhóm sản phẩm tổng hợp phản hồi liên quan đến email xác nhận chưa ổn định.\n- Trưởng nhóm chốt danh sách lỗi ảnh hưởng trực tiếp đến demo.\n- Các bên cập nhật tiến độ trong buổi họp sprint tiếp theo.",
+    "mode": "action_items",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án bộ công cụ phân tích phản hồi cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là pipeline làm sạch dữ liệu đã chạy tự động, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là nhãn lỗi còn chưa nhất quán, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất review lại guideline gán nhãn, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode action_items.",
+    "summary": "- Nhóm kỹ thuật review lại guideline gán nhãn cho dự án bộ công cụ phân tích phản hồi.\n- Nhóm sản phẩm tổng hợp phản hồi liên quan đến nhãn lỗi còn chưa nhất quán.\n- Trưởng nhóm chốt danh sách lỗi ảnh hưởng trực tiếp đến demo.\n- Các bên cập nhật tiến độ trong buổi họp sprint tiếp theo.",
+    "mode": "action_items",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án ứng dụng tóm tắt văn bản cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là API xử lý ổn định hơn, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là giao diện so sánh mode còn chậm, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất thêm log latency, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode action_items.",
+    "summary": "- Nhóm kỹ thuật thêm log latency cho dự án ứng dụng tóm tắt văn bản.\n- Nhóm sản phẩm tổng hợp phản hồi liên quan đến giao diện so sánh mode còn chậm.\n- Trưởng nhóm chốt danh sách lỗi ảnh hưởng trực tiếp đến demo.\n- Các bên cập nhật tiến độ trong buổi họp sprint tiếp theo.",
+    "mode": "action_items",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án dashboard chăm sóc khách hàng cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là bộ lọc ticket đã rõ hơn, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là biểu đồ theo ngày còn lệch múi giờ, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất rà soát truy vấn, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode action_items.",
+    "summary": "- Nhóm kỹ thuật rà soát truy vấn cho dự án dashboard chăm sóc khách hàng.\n- Nhóm sản phẩm tổng hợp phản hồi liên quan đến biểu đồ theo ngày còn lệch múi giờ.\n- Trưởng nhóm chốt danh sách lỗi ảnh hưởng trực tiếp đến demo.\n- Các bên cập nhật tiến độ trong buổi họp sprint tiếp theo.",
+    "mode": "action_items",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án hệ thống học trực tuyến cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là module bài tập đã mở cho lớp thử nghiệm, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là đồng bộ điểm đôi lúc trễ, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất kiểm tra hàng đợi xử lý, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode action_items.",
+    "summary": "- Nhóm kỹ thuật kiểm tra hàng đợi xử lý cho dự án hệ thống học trực tuyến.\n- Nhóm sản phẩm tổng hợp phản hồi liên quan đến đồng bộ điểm đôi lúc trễ.\n- Trưởng nhóm chốt danh sách lỗi ảnh hưởng trực tiếp đến demo.\n- Các bên cập nhật tiến độ trong buổi họp sprint tiếp theo.",
+    "mode": "action_items",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án chatbot nội bộ cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là câu trả lời cho FAQ chính xác hơn, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là câu hỏi dài vẫn bị bỏ sót ý, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất bổ sung bước tách yêu cầu, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode action_items.",
+    "summary": "- Nhóm kỹ thuật bổ sung bước tách yêu cầu cho dự án chatbot nội bộ.\n- Nhóm sản phẩm tổng hợp phản hồi liên quan đến câu hỏi dài vẫn bị bỏ sót ý.\n- Trưởng nhóm chốt danh sách lỗi ảnh hưởng trực tiếp đến demo.\n- Các bên cập nhật tiến độ trong buổi họp sprint tiếp theo.",
+    "mode": "action_items",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án cổng đăng ký sự kiện cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là luồng đăng ký đã ngắn hơn, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là email xác nhận chưa ổn định, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất kiểm tra dịch vụ gửi mail, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode action_items.",
+    "summary": "- Nhóm kỹ thuật kiểm tra dịch vụ gửi mail cho dự án cổng đăng ký sự kiện.\n- Nhóm sản phẩm tổng hợp phản hồi liên quan đến email xác nhận chưa ổn định.\n- Trưởng nhóm chốt danh sách lỗi ảnh hưởng trực tiếp đến demo.\n- Các bên cập nhật tiến độ trong buổi họp sprint tiếp theo.",
+    "mode": "action_items",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án bộ công cụ phân tích phản hồi cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là pipeline làm sạch dữ liệu đã chạy tự động, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là nhãn lỗi còn chưa nhất quán, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất review lại guideline gán nhãn, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode action_items.",
+    "summary": "- Nhóm kỹ thuật review lại guideline gán nhãn cho dự án bộ công cụ phân tích phản hồi.\n- Nhóm sản phẩm tổng hợp phản hồi liên quan đến nhãn lỗi còn chưa nhất quán.\n- Trưởng nhóm chốt danh sách lỗi ảnh hưởng trực tiếp đến demo.\n- Các bên cập nhật tiến độ trong buổi họp sprint tiếp theo.",
+    "mode": "action_items",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án ứng dụng tóm tắt văn bản cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là API xử lý ổn định hơn, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là giao diện so sánh mode còn chậm, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất thêm log latency, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode action_items.",
+    "summary": "- Nhóm kỹ thuật thêm log latency cho dự án ứng dụng tóm tắt văn bản.\n- Nhóm sản phẩm tổng hợp phản hồi liên quan đến giao diện so sánh mode còn chậm.\n- Trưởng nhóm chốt danh sách lỗi ảnh hưởng trực tiếp đến demo.\n- Các bên cập nhật tiến độ trong buổi họp sprint tiếp theo.",
+    "mode": "action_items",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án dashboard chăm sóc khách hàng cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là bộ lọc ticket đã rõ hơn, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là biểu đồ theo ngày còn lệch múi giờ, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất rà soát truy vấn, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode action_items.",
+    "summary": "- Nhóm kỹ thuật rà soát truy vấn cho dự án dashboard chăm sóc khách hàng.\n- Nhóm sản phẩm tổng hợp phản hồi liên quan đến biểu đồ theo ngày còn lệch múi giờ.\n- Trưởng nhóm chốt danh sách lỗi ảnh hưởng trực tiếp đến demo.\n- Các bên cập nhật tiến độ trong buổi họp sprint tiếp theo.",
+    "mode": "action_items",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Báo cáo cập nhật dự án hệ thống học trực tuyến cho biết nhóm đã đạt một số tiến triển rõ ràng trong sprint hiện tại. Điểm tích cực nhất là module bài tập đã mở cho lớp thử nghiệm, nhờ đó nhóm thử nghiệm có thể kiểm tra luồng chính mà không cần thao tác thủ công quá nhiều. Tuy vậy, vấn đề còn tồn tại là đồng bộ điểm đôi lúc trễ, làm cho trải nghiệm chưa ổn định khi dữ liệu đầu vào thay đổi. Nhóm kỹ thuật đề xuất kiểm tra hàng đợi xử lý, còn nhóm sản phẩm muốn ghi nhận phản hồi người dùng trước khi mở rộng thêm tính năng. Trong tuần tới, mục tiêu là giữ phạm vi nhỏ, sửa lỗi có ảnh hưởng trực tiếp đến demo và chuẩn bị số liệu so sánh trước buổi báo cáo. Nội dung này được dùng để huấn luyện mode action_items.",
+    "summary": "- Nhóm kỹ thuật kiểm tra hàng đợi xử lý cho dự án hệ thống học trực tuyến.\n- Nhóm sản phẩm tổng hợp phản hồi liên quan đến đồng bộ điểm đôi lúc trễ.\n- Trưởng nhóm chốt danh sách lỗi ảnh hưởng trực tiếp đến demo.\n- Các bên cập nhật tiến độ trong buổi họp sprint tiếp theo.",
+    "mode": "action_items",
+    "domain": "project_updates"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập NLP khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là ghi ví dụ input-output cho từng task, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm tokenization, embedding, seq2seq, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là không phân biệt training và inference, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode action_items.",
+    "summary": "- Nhóm học tập tạo checklist ôn tập NLP theo phương pháp ghi ví dụ input-output cho từng task.\n- Mỗi thành viên chuẩn bị ví dụ ngắn cho tokenization, embedding, seq2seq.\n- Người phụ trách tổng hợp ghi chú trước buổi ôn nhóm.\n- Cả nhóm rà soát lại các lỗi dễ nhầm trước ngày kiểm tra.",
+    "mode": "action_items",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập kiểm thử phần mềm khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là gom lỗi theo mức độ nghiêm trọng, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm unit test, integration test, regression test, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là viết test thiếu expected behavior, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode action_items.",
+    "summary": "- Nhóm học tập tạo checklist ôn tập kiểm thử phần mềm theo phương pháp gom lỗi theo mức độ nghiêm trọng.\n- Mỗi thành viên chuẩn bị ví dụ ngắn cho unit test, integration test, regression test.\n- Người phụ trách tổng hợp ghi chú trước buổi ôn nhóm.\n- Cả nhóm rà soát lại các lỗi dễ nhầm trước ngày kiểm tra.",
+    "mode": "action_items",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập mạng máy tính khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là tóm tắt theo từng tầng giao thức, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm TCP, UDP, DNS, HTTP, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là học rời rạc từng khái niệm, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode action_items.",
+    "summary": "- Nhóm học tập tạo checklist ôn tập mạng máy tính theo phương pháp tóm tắt theo từng tầng giao thức.\n- Mỗi thành viên chuẩn bị ví dụ ngắn cho TCP, UDP, DNS, HTTP.\n- Người phụ trách tổng hợp ghi chú trước buổi ôn nhóm.\n- Cả nhóm rà soát lại các lỗi dễ nhầm trước ngày kiểm tra.",
+    "mode": "action_items",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập Transformer khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là vẽ sơ đồ encoder-decoder, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm self-attention và positional encoding, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là nhầm vai trò của encoder, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode action_items.",
+    "summary": "- Nhóm học tập tạo checklist ôn tập Transformer theo phương pháp vẽ sơ đồ encoder-decoder.\n- Mỗi thành viên chuẩn bị ví dụ ngắn cho self-attention và positional encoding.\n- Người phụ trách tổng hợp ghi chú trước buổi ôn nhóm.\n- Cả nhóm rà soát lại các lỗi dễ nhầm trước ngày kiểm tra.",
+    "mode": "action_items",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm encoder-decoder trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng encoder đọc input còn decoder sinh output, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là phù hợp bài toán seq2seq, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là quên luồng dữ liệu giữa hai phần, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: encoder-decoder.\n- Cần nhớ: encoder đọc input còn decoder sinh output.\n- Ý nghĩa: phù hợp bài toán seq2seq.\n- Lỗi dễ nhầm: quên luồng dữ liệu giữa hai phần.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm positional encoding trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng bổ sung thông tin thứ tự vào embedding, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là Transformer không xử lý tuần tự như RNN, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nghĩ rằng mô hình tự biết vị trí, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: positional encoding.\n- Cần nhớ: bổ sung thông tin thứ tự vào embedding.\n- Ý nghĩa: Transformer không xử lý tuần tự như RNN.\n- Lỗi dễ nhầm: nghĩ rằng mô hình tự biết vị trí.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm beam search trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng giữ nhiều giả thuyết sinh văn bản cùng lúc, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giảm rủi ro chọn câu kém từ bước đầu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là chọn beam quá lớn gây chậm, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: beam search.\n- Cần nhớ: giữ nhiều giả thuyết sinh văn bản cùng lúc.\n- Ý nghĩa: giảm rủi ro chọn câu kém từ bước đầu.\n- Lỗi dễ nhầm: chọn beam quá lớn gây chậm.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm ROUGE trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng đo độ trùng lặp từ hoặc chuỗi con với reference, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là hữu ích cho so sánh tự động, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là không đo đầy đủ ý nghĩa, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: ROUGE.\n- Cần nhớ: đo độ trùng lặp từ hoặc chuỗi con với reference.\n- Ý nghĩa: hữu ích cho so sánh tự động.\n- Lỗi dễ nhầm: không đo đầy đủ ý nghĩa.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm fine-tuning trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng điều chỉnh mô hình pre-trained trên dataset mục tiêu, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là tiết kiệm tài nguyên hơn train từ đầu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là dễ overfit nếu dữ liệu nhỏ, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: fine-tuning.\n- Cần nhớ: điều chỉnh mô hình pre-trained trên dataset mục tiêu.\n- Ý nghĩa: tiết kiệm tài nguyên hơn train từ đầu.\n- Lỗi dễ nhầm: dễ overfit nếu dữ liệu nhỏ.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm tokenization trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng chia văn bản thành token hoặc subword, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giúp mô hình xử lý từ hiếm, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nhầm token với từ nguyên vẹn, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: tokenization.\n- Cần nhớ: chia văn bản thành token hoặc subword.\n- Ý nghĩa: giúp mô hình xử lý từ hiếm.\n- Lỗi dễ nhầm: nhầm token với từ nguyên vẹn.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm gradient accumulation trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng cộng dồn gradient qua nhiều mini-batch, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giả lập batch lớn trên GPU nhỏ, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là quên chia effective batch size, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: gradient accumulation.\n- Cần nhớ: cộng dồn gradient qua nhiều mini-batch.\n- Ý nghĩa: giả lập batch lớn trên GPU nhỏ.\n- Lỗi dễ nhầm: quên chia effective batch size.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm self-attention trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng mỗi token xét quan hệ với các token khác, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là hiểu được phụ thuộc xa trong câu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nhầm với attention thông thường, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: self-attention.\n- Cần nhớ: mỗi token xét quan hệ với các token khác.\n- Ý nghĩa: hiểu được phụ thuộc xa trong câu.\n- Lỗi dễ nhầm: nhầm với attention thông thường.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm encoder-decoder trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng encoder đọc input còn decoder sinh output, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là phù hợp bài toán seq2seq, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là quên luồng dữ liệu giữa hai phần, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: encoder-decoder.\n- Cần nhớ: encoder đọc input còn decoder sinh output.\n- Ý nghĩa: phù hợp bài toán seq2seq.\n- Lỗi dễ nhầm: quên luồng dữ liệu giữa hai phần.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm positional encoding trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng bổ sung thông tin thứ tự vào embedding, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là Transformer không xử lý tuần tự như RNN, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nghĩ rằng mô hình tự biết vị trí, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: positional encoding.\n- Cần nhớ: bổ sung thông tin thứ tự vào embedding.\n- Ý nghĩa: Transformer không xử lý tuần tự như RNN.\n- Lỗi dễ nhầm: nghĩ rằng mô hình tự biết vị trí.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm beam search trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng giữ nhiều giả thuyết sinh văn bản cùng lúc, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giảm rủi ro chọn câu kém từ bước đầu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là chọn beam quá lớn gây chậm, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: beam search.\n- Cần nhớ: giữ nhiều giả thuyết sinh văn bản cùng lúc.\n- Ý nghĩa: giảm rủi ro chọn câu kém từ bước đầu.\n- Lỗi dễ nhầm: chọn beam quá lớn gây chậm.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm ROUGE trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng đo độ trùng lặp từ hoặc chuỗi con với reference, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là hữu ích cho so sánh tự động, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là không đo đầy đủ ý nghĩa, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: ROUGE.\n- Cần nhớ: đo độ trùng lặp từ hoặc chuỗi con với reference.\n- Ý nghĩa: hữu ích cho so sánh tự động.\n- Lỗi dễ nhầm: không đo đầy đủ ý nghĩa.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm fine-tuning trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng điều chỉnh mô hình pre-trained trên dataset mục tiêu, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là tiết kiệm tài nguyên hơn train từ đầu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là dễ overfit nếu dữ liệu nhỏ, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: fine-tuning.\n- Cần nhớ: điều chỉnh mô hình pre-trained trên dataset mục tiêu.\n- Ý nghĩa: tiết kiệm tài nguyên hơn train từ đầu.\n- Lỗi dễ nhầm: dễ overfit nếu dữ liệu nhỏ.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm tokenization trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng chia văn bản thành token hoặc subword, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giúp mô hình xử lý từ hiếm, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nhầm token với từ nguyên vẹn, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: tokenization.\n- Cần nhớ: chia văn bản thành token hoặc subword.\n- Ý nghĩa: giúp mô hình xử lý từ hiếm.\n- Lỗi dễ nhầm: nhầm token với từ nguyên vẹn.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm gradient accumulation trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng cộng dồn gradient qua nhiều mini-batch, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giả lập batch lớn trên GPU nhỏ, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là quên chia effective batch size, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: gradient accumulation.\n- Cần nhớ: cộng dồn gradient qua nhiều mini-batch.\n- Ý nghĩa: giả lập batch lớn trên GPU nhỏ.\n- Lỗi dễ nhầm: quên chia effective batch size.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm self-attention trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng mỗi token xét quan hệ với các token khác, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là hiểu được phụ thuộc xa trong câu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nhầm với attention thông thường, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: self-attention.\n- Cần nhớ: mỗi token xét quan hệ với các token khác.\n- Ý nghĩa: hiểu được phụ thuộc xa trong câu.\n- Lỗi dễ nhầm: nhầm với attention thông thường.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm encoder-decoder trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng encoder đọc input còn decoder sinh output, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là phù hợp bài toán seq2seq, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là quên luồng dữ liệu giữa hai phần, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: encoder-decoder.\n- Cần nhớ: encoder đọc input còn decoder sinh output.\n- Ý nghĩa: phù hợp bài toán seq2seq.\n- Lỗi dễ nhầm: quên luồng dữ liệu giữa hai phần.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm positional encoding trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng bổ sung thông tin thứ tự vào embedding, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là Transformer không xử lý tuần tự như RNN, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nghĩ rằng mô hình tự biết vị trí, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: positional encoding.\n- Cần nhớ: bổ sung thông tin thứ tự vào embedding.\n- Ý nghĩa: Transformer không xử lý tuần tự như RNN.\n- Lỗi dễ nhầm: nghĩ rằng mô hình tự biết vị trí.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm beam search trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng giữ nhiều giả thuyết sinh văn bản cùng lúc, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giảm rủi ro chọn câu kém từ bước đầu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là chọn beam quá lớn gây chậm, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: beam search.\n- Cần nhớ: giữ nhiều giả thuyết sinh văn bản cùng lúc.\n- Ý nghĩa: giảm rủi ro chọn câu kém từ bước đầu.\n- Lỗi dễ nhầm: chọn beam quá lớn gây chậm.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm ROUGE trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng đo độ trùng lặp từ hoặc chuỗi con với reference, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là hữu ích cho so sánh tự động, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là không đo đầy đủ ý nghĩa, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: ROUGE.\n- Cần nhớ: đo độ trùng lặp từ hoặc chuỗi con với reference.\n- Ý nghĩa: hữu ích cho so sánh tự động.\n- Lỗi dễ nhầm: không đo đầy đủ ý nghĩa.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm fine-tuning trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng điều chỉnh mô hình pre-trained trên dataset mục tiêu, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là tiết kiệm tài nguyên hơn train từ đầu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là dễ overfit nếu dữ liệu nhỏ, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: fine-tuning.\n- Cần nhớ: điều chỉnh mô hình pre-trained trên dataset mục tiêu.\n- Ý nghĩa: tiết kiệm tài nguyên hơn train từ đầu.\n- Lỗi dễ nhầm: dễ overfit nếu dữ liệu nhỏ.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm tokenization trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng chia văn bản thành token hoặc subword, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giúp mô hình xử lý từ hiếm, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nhầm token với từ nguyên vẹn, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: tokenization.\n- Cần nhớ: chia văn bản thành token hoặc subword.\n- Ý nghĩa: giúp mô hình xử lý từ hiếm.\n- Lỗi dễ nhầm: nhầm token với từ nguyên vẹn.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm gradient accumulation trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng cộng dồn gradient qua nhiều mini-batch, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giả lập batch lớn trên GPU nhỏ, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là quên chia effective batch size, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: gradient accumulation.\n- Cần nhớ: cộng dồn gradient qua nhiều mini-batch.\n- Ý nghĩa: giả lập batch lớn trên GPU nhỏ.\n- Lỗi dễ nhầm: quên chia effective batch size.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm self-attention trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng mỗi token xét quan hệ với các token khác, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là hiểu được phụ thuộc xa trong câu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nhầm với attention thông thường, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: self-attention.\n- Cần nhớ: mỗi token xét quan hệ với các token khác.\n- Ý nghĩa: hiểu được phụ thuộc xa trong câu.\n- Lỗi dễ nhầm: nhầm với attention thông thường.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm encoder-decoder trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng encoder đọc input còn decoder sinh output, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là phù hợp bài toán seq2seq, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là quên luồng dữ liệu giữa hai phần, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: encoder-decoder.\n- Cần nhớ: encoder đọc input còn decoder sinh output.\n- Ý nghĩa: phù hợp bài toán seq2seq.\n- Lỗi dễ nhầm: quên luồng dữ liệu giữa hai phần.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm positional encoding trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng bổ sung thông tin thứ tự vào embedding, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là Transformer không xử lý tuần tự như RNN, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nghĩ rằng mô hình tự biết vị trí, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: positional encoding.\n- Cần nhớ: bổ sung thông tin thứ tự vào embedding.\n- Ý nghĩa: Transformer không xử lý tuần tự như RNN.\n- Lỗi dễ nhầm: nghĩ rằng mô hình tự biết vị trí.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm beam search trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng giữ nhiều giả thuyết sinh văn bản cùng lúc, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giảm rủi ro chọn câu kém từ bước đầu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là chọn beam quá lớn gây chậm, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: beam search.\n- Cần nhớ: giữ nhiều giả thuyết sinh văn bản cùng lúc.\n- Ý nghĩa: giảm rủi ro chọn câu kém từ bước đầu.\n- Lỗi dễ nhầm: chọn beam quá lớn gây chậm.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm ROUGE trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng đo độ trùng lặp từ hoặc chuỗi con với reference, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là hữu ích cho so sánh tự động, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là không đo đầy đủ ý nghĩa, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: ROUGE.\n- Cần nhớ: đo độ trùng lặp từ hoặc chuỗi con với reference.\n- Ý nghĩa: hữu ích cho so sánh tự động.\n- Lỗi dễ nhầm: không đo đầy đủ ý nghĩa.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm fine-tuning trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng điều chỉnh mô hình pre-trained trên dataset mục tiêu, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là tiết kiệm tài nguyên hơn train từ đầu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là dễ overfit nếu dữ liệu nhỏ, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: fine-tuning.\n- Cần nhớ: điều chỉnh mô hình pre-trained trên dataset mục tiêu.\n- Ý nghĩa: tiết kiệm tài nguyên hơn train từ đầu.\n- Lỗi dễ nhầm: dễ overfit nếu dữ liệu nhỏ.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm tokenization trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng chia văn bản thành token hoặc subword, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giúp mô hình xử lý từ hiếm, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nhầm token với từ nguyên vẹn, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: tokenization.\n- Cần nhớ: chia văn bản thành token hoặc subword.\n- Ý nghĩa: giúp mô hình xử lý từ hiếm.\n- Lỗi dễ nhầm: nhầm token với từ nguyên vẹn.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm gradient accumulation trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng cộng dồn gradient qua nhiều mini-batch, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là giả lập batch lớn trên GPU nhỏ, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là quên chia effective batch size, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: gradient accumulation.\n- Cần nhớ: cộng dồn gradient qua nhiều mini-batch.\n- Ý nghĩa: giả lập batch lớn trên GPU nhỏ.\n- Lỗi dễ nhầm: quên chia effective batch size.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm self-attention trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng mỗi token xét quan hệ với các token khác, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là hiểu được phụ thuộc xa trong câu, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nhầm với attention thông thường, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: self-attention.\n- Cần nhớ: mỗi token xét quan hệ với các token khác.\n- Ý nghĩa: hiểu được phụ thuộc xa trong câu.\n- Lỗi dễ nhầm: nhầm với attention thông thường.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm encoder-decoder trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng encoder đọc input còn decoder sinh output, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là phù hợp bài toán seq2seq, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là quên luồng dữ liệu giữa hai phần, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: encoder-decoder.\n- Cần nhớ: encoder đọc input còn decoder sinh output.\n- Ý nghĩa: phù hợp bài toán seq2seq.\n- Lỗi dễ nhầm: quên luồng dữ liệu giữa hai phần.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Bài giảng hôm nay giải thích khái niệm positional encoding trong bối cảnh mô hình Transformer và các hệ thống xử lý ngôn ngữ tự nhiên. Giảng viên nhấn mạnh rằng bổ sung thông tin thứ tự vào embedding, vì vậy sinh viên cần nhìn khái niệm này như một phần của toàn bộ pipeline chứ không học rời rạc. Lợi ích chính là Transformer không xử lý tuần tự như RNN, đặc biệt khi mô hình phải xử lý văn bản dài hoặc sinh ra bản tóm tắt có cấu trúc. Giảng viên cũng cảnh báo lỗi hay gặp là nghĩ rằng mô hình tự biết vị trí, khiến phần giải thích trong báo cáo thiếu chính xác. Cuối buổi, sinh viên được yêu cầu tự viết lại định nghĩa ngắn, thêm ví dụ đầu vào đầu ra và ghi chú câu hỏi còn chưa chắc để ôn tập sau. Đoạn này phù hợp với mode study_notes.",
+    "summary": "- Khái niệm chính: positional encoding.\n- Cần nhớ: bổ sung thông tin thứ tự vào embedding.\n- Ý nghĩa: Transformer không xử lý tuần tự như RNN.\n- Lỗi dễ nhầm: nghĩ rằng mô hình tự biết vị trí.\n- Nên tự viết một ví dụ input-output để ôn tập.",
+    "mode": "study_notes",
+    "domain": "lecture_notes"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập mạng máy tính khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là tóm tắt theo từng tầng giao thức, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm TCP, UDP, DNS, HTTP, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là học rời rạc từng khái niệm, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode study_notes.",
+    "summary": "- Chủ đề: ôn tập mạng máy tính.\n- Cách ghi chú: tóm tắt theo từng tầng giao thức.\n- Trọng tâm: TCP, UDP, DNS, HTTP.\n- Tránh: học rời rạc từng khái niệm.\n- Mỗi mục nên có định nghĩa ngắn và ví dụ nhỏ.",
+    "mode": "study_notes",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập Transformer khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là vẽ sơ đồ encoder-decoder, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm self-attention và positional encoding, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là nhầm vai trò của encoder, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode study_notes.",
+    "summary": "- Chủ đề: ôn tập Transformer.\n- Cách ghi chú: vẽ sơ đồ encoder-decoder.\n- Trọng tâm: self-attention và positional encoding.\n- Tránh: nhầm vai trò của encoder.\n- Mỗi mục nên có định nghĩa ngắn và ví dụ nhỏ.",
+    "mode": "study_notes",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập cơ sở dữ liệu khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là chia bài theo chuẩn hóa và giao dịch, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm khóa chính, khóa ngoại, ACID, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là học thuộc định nghĩa quá dài, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode study_notes.",
+    "summary": "- Chủ đề: ôn tập cơ sở dữ liệu.\n- Cách ghi chú: chia bài theo chuẩn hóa và giao dịch.\n- Trọng tâm: khóa chính, khóa ngoại, ACID.\n- Tránh: học thuộc định nghĩa quá dài.\n- Mỗi mục nên có định nghĩa ngắn và ví dụ nhỏ.",
+    "mode": "study_notes",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập học máy khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là lập bảng so sánh mô hình, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm overfitting, regularization, validation, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là chỉ nhớ tên thuật toán, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode study_notes.",
+    "summary": "- Chủ đề: ôn tập học máy.\n- Cách ghi chú: lập bảng so sánh mô hình.\n- Trọng tâm: overfitting, regularization, validation.\n- Tránh: chỉ nhớ tên thuật toán.\n- Mỗi mục nên có định nghĩa ngắn và ví dụ nhỏ.",
+    "mode": "study_notes",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập NLP khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là ghi ví dụ input-output cho từng task, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm tokenization, embedding, seq2seq, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là không phân biệt training và inference, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode study_notes.",
+    "summary": "- Chủ đề: ôn tập NLP.\n- Cách ghi chú: ghi ví dụ input-output cho từng task.\n- Trọng tâm: tokenization, embedding, seq2seq.\n- Tránh: không phân biệt training và inference.\n- Mỗi mục nên có định nghĩa ngắn và ví dụ nhỏ.",
+    "mode": "study_notes",
+    "domain": "study_materials"
+  },
+  {
+    "document": "Tài liệu hướng dẫn ôn tập kiểm thử phần mềm khuyên sinh viên không nên chép lại toàn bộ nội dung bài giảng theo thứ tự ban đầu. Cách hiệu quả hơn là gom lỗi theo mức độ nghiêm trọng, sau đó rút ra những ý có khả năng xuất hiện trong câu hỏi tự luận hoặc phần trình bày miệng. Người học cần chú ý nhóm kiến thức gồm unit test, integration test, regression test, vì đây là các điểm thường liên kết với nhau trong bài kiểm tra. Tài liệu cũng nhắc rằng lỗi phổ biến là viết test thiếu expected behavior, làm cho ghi chú dài nhưng khó dùng khi cần ôn nhanh. Mỗi mục nên có một định nghĩa ngắn, một ví dụ nhỏ và một cảnh báo dễ nhầm để người đọc có thể nhớ lại kiến thức trong vài phút. Nội dung này hỗ trợ huấn luyện mode study_notes.",
+    "summary": "- Chủ đề: ôn tập kiểm thử phần mềm.\n- Cách ghi chú: gom lỗi theo mức độ nghiêm trọng.\n- Trọng tâm: unit test, integration test, regression test.\n- Tránh: viết test thiếu expected behavior.\n- Mỗi mục nên có định nghĩa ngắn và ví dụ nhỏ.",
+    "mode": "study_notes",
+    "domain": "study_materials"
   }
 ]
