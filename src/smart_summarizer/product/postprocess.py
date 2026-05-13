@@ -24,6 +24,8 @@ def format_bullets(text: str) -> str:
 
 
 def format_action_items(text: str) -> str:
+    if "không có việc cần làm" in text.lower():
+        return "Không có việc cần làm rõ ràng."
     items = split_sentences(text)
     if not items:
         return ""
@@ -34,7 +36,22 @@ def format_study_notes(text: str) -> str:
     items = split_sentences(text)
     if not items:
         return ""
-    return "\n".join(f"- {item}" for item in items)
+
+    label_prefixes = (
+        "khái niệm chính:",
+        "cần nhớ:",
+        "ví dụ:",
+        "ý nghĩa:",
+        "lỗi dễ nhầm:",
+    )
+    if any(item.lower().startswith(label_prefixes) for item in items):
+        return "\n".join(items)
+
+    labels = ("Khái niệm chính", "Cần nhớ", "Ví dụ", "Lỗi dễ nhầm")
+    return "\n".join(
+        f"{label}: {item}"
+        for label, item in zip(labels, items[: len(labels)], strict=False)
+    )
 
 
 def postprocess_summary(text: str, mode: str) -> str:

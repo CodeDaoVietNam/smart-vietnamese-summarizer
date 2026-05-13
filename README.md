@@ -110,7 +110,7 @@ models/vit5-summarizer-v1
 ## Phase 2 Multi-Mode Adaptation
 
 ```bash
-python scripts/build_phase2_synthetic_200.py
+python scripts/build_phase2_synthetic_400.py
 python scripts/generate_synthetic.py --input data/synthetic/reviewed_all.json
 python scripts/train_phase2.py --config configs/train_phase2.yaml
 ```
@@ -122,18 +122,18 @@ Phase 2 uses a paired controllability dataset to adapt the model to the four out
 - `action_items`
 - `study_notes`
 
-The current Phase 2 dataset has 200 reviewed rows from 50 base documents:
+The current Phase 2 dataset has 400 reviewed rows from 100 base documents:
 
 ```text
-50 base documents x 4 modes
-160 train / 40 validation
-50 samples per output mode
+100 base documents x 4 modes
+320 train / 80 validation
+100 samples per output mode
 ```
 
 To rebuild the reviewed synthetic dataset and stratified split:
 
 ```bash
-python scripts/build_phase2_synthetic_200.py
+python scripts/build_phase2_synthetic_400.py
 python scripts/generate_synthetic.py --input data/synthetic/reviewed_all.json
 ```
 
@@ -169,6 +169,17 @@ python scripts/evaluate_modes.py --input data/samples/qualitative_mode_eval.json
 ```
 
 This writes both JSONL predictions and a grouped Markdown report for reading mode differences side by side.
+For a stricter held-out check that is not used in training, run:
+
+```bash
+python scripts/evaluate_modes.py \
+  --input data/samples/holdout_mode_eval.jsonl \
+  --length medium \
+  --output reports/examples/holdout_mode_comparison_predictions.jsonl \
+  --markdown-output reports/examples/holdout_mode_comparison_report.md
+```
+
+Manual scoring can be recorded in `reports/examples/holdout_rubric_template.csv`.
 
 ## Predict
 

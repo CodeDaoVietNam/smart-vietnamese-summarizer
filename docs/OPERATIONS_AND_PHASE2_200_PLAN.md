@@ -1,6 +1,6 @@
-# Operations Architecture And Phase 2 200-Sample Plan
+# Operations Architecture And Phase 2 400-Sample Plan
 
-Tài liệu này mô tả cách vận hành đồ án sau khi mở rộng synthetic data Phase 2 lên 200 mẫu.
+Tài liệu này mô tả cách vận hành đồ án sau khi mở rộng synthetic data Phase 2 lên 400 mẫu và thêm holdout evaluation để chấm controllability khách quan hơn.
 
 ## 1. Kiến Trúc Vận Hành
 
@@ -49,6 +49,11 @@ models/vit5-summarizer-v2
 data/samples/qualitative_mode_eval.jsonl
   -> scripts/evaluate_modes.py
   -> reports/examples/mode_comparison_predictions.jsonl
+
+data/samples/holdout_mode_eval.jsonl
+  -> scripts/evaluate_modes.py
+  -> reports/examples/holdout_mode_comparison_report.md
+  -> reports/examples/holdout_rubric_template.csv
 ```
 
 ROUGE trên VietNews dùng để so sánh khả năng summarization chung. Mode comparison dùng để đánh giá controllability vì Phase 2 không nhất thiết phải thắng Phase 1 trên news ROUGE.
@@ -80,7 +85,7 @@ data/synthetic/validation.jsonl
 Phase 2 hiện dùng paired controllability dataset:
 
 ```text
-50 base documents x 4 modes = 200 training rows
+100 base documents x 4 modes = 400 training rows
 ```
 
 Cùng một `base_id` có chung `document` nhưng 4 target summary khác nhau cho `concise`, `bullet`, `action_items`, `study_notes`.
@@ -89,25 +94,25 @@ Phân bổ sau khi mở rộng:
 
 | Mode | Train | Validation | Total |
 |---|---:|---:|---:|
-| `concise` | 40 | 10 | 50 |
-| `bullet` | 40 | 10 | 50 |
-| `action_items` | 40 | 10 | 50 |
-| `study_notes` | 40 | 10 | 50 |
-| **Total** | **160** | **40** | **200** |
+| `concise` | 80 | 20 | 100 |
+| `bullet` | 80 | 20 | 100 |
+| `action_items` | 80 | 20 | 100 |
+| `study_notes` | 80 | 20 | 100 |
+| **Total** | **320** | **80** | **400** |
 
 Phân bổ domain:
 
 | Domain | Total |
 |---|---:|
-| `meeting_notes` | 72 |
-| `lecture_notes` | 72 |
-| `project_updates` | 28 |
-| `study_materials` | 28 |
+| `meeting_notes` | 120 |
+| `lecture_notes` | 120 |
+| `project_updates` | 80 |
+| `general_articles` | 80 |
 
-Để tái tạo dataset 200 mẫu và split 80/20:
+Để tái tạo dataset 400 mẫu, holdout set và split 80/20:
 
 ```bash
-python scripts/build_phase2_synthetic_200.py
+python scripts/build_phase2_synthetic_400.py
 python scripts/generate_synthetic.py --input data/synthetic/reviewed_all.json
 ```
 
@@ -119,7 +124,7 @@ Train Phase 2 từ checkpoint Phase 1:
 python scripts/train_phase2.py --config configs/train_phase2.yaml
 ```
 
-Hyperparameters mặc định giữ nguyên cho lần chạy 200 mẫu đầu tiên:
+Hyperparameters mặc định giữ nguyên cho experiment B trên 400 mẫu:
 
 ```yaml
 epochs: 2
@@ -143,6 +148,27 @@ python scripts/evaluate_modes.py \
   --length medium \
   --markdown-output reports/examples/mode_comparison_report.md
 ```
+
+Evaluate holdout set chưa dùng trong training:
+
+```bash
+python scripts/evaluate_modes.py \
+  --input data/samples/holdout_mode_eval.jsonl \
+  --config configs/app.yaml \
+  --length medium \
+  --output reports/examples/holdout_mode_comparison_predictions.jsonl \
+  --markdown-output reports/examples/holdout_mode_comparison_report.md
+```
+
+Sau đó chấm thủ công vào `reports/examples/holdout_rubric_template.csv` theo thang 0-2:
+
+| Criterion | Meaning |
+|---|---|
+| `mode_adherence` | Output có đúng mục đích của mode không |
+| `factuality` | Có bịa hoặc sai thông tin không |
+| `usefulness` | Có giúp người dùng hành động/học nhanh hơn không |
+| `format_correctness` | Format có đúng yêu cầu mode không |
+| `conciseness` | Có đủ ngắn gọn và không lan man không |
 
 ## 4. Backend And Frontend Use Cases
 
@@ -171,4 +197,4 @@ Frontend use cases:
 
 ## 6. Experiment Notes
 
-Không gộp Phase 1 và Phase 2 trong lần chạy chính. Nếu cần experiment phụ sau baseline 200 mẫu, có thể thử mixed replay ở Phase 2 với khoảng 70-80% synthetic và 20-30% VietNews concise để giảm nguy cơ quên năng lực summarization gốc.
+Không gộp Phase 1 và Phase 2 trong lần chạy chính. Experiment nên so sánh A/B/C: baseline 200 rows, 400 rows epoch 2, và 400 rows epoch 3. Nếu cần experiment phụ sau baseline 400 mẫu, có thể thử mixed replay ở Phase 2 với khoảng 70-80% synthetic và 20-30% VietNews concise để giảm nguy cơ quên năng lực summarization gốc.

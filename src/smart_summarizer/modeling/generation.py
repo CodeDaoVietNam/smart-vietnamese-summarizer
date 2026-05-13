@@ -7,10 +7,10 @@ from smart_summarizer.data.preprocessing import clean_text
 
 
 MODE_PREFIXES = {
-    "concise": "tom tat ngan gon",
-    "bullet": "tom tat thanh cac y chinh",
-    "action_items": "trich xuat cac viec can lam",
-    "study_notes": "tao ghi chu hoc tap",
+    "concise": "Tóm tắt ngắn gọn thành một đoạn văn tự nhiên, không dùng bullet",
+    "bullet": "Tóm tắt thành các ý chính dạng bullet, mỗi bullet một ý",
+    "action_items": "Chỉ trích xuất việc cần làm. Mỗi dòng gồm người phụ trách, hành động, deadline nếu có",
+    "study_notes": "Tạo ghi chú học tập. Nêu khái niệm chính, cần nhớ, ví dụ, lỗi dễ nhầm",
 }
 
 DEFAULT_MAX_NEW_TOKENS = {

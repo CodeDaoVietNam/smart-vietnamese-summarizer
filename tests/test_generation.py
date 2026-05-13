@@ -5,7 +5,7 @@ from smart_summarizer.modeling.generation import build_instruction, generation_k
 
 def test_build_instruction_uses_mode_prefix() -> None:
     instruction = build_instruction("Nội dung cần tóm tắt", mode="bullet")
-    assert instruction.startswith("tom tat thanh cac y chinh:")
+    assert instruction.startswith("Tóm tắt thành các ý chính dạng bullet, mỗi bullet một ý:")
 
 
 def test_generation_kwargs_uses_length_budget() -> None:
