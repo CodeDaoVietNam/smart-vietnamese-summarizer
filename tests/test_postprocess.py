@@ -23,3 +23,12 @@ def test_action_items_preserve_no_task_message() -> None:
 def test_study_notes_use_study_labels() -> None:
     result = postprocess_summary("Self-attention. Mỗi token xét token khác.", mode="study_notes")
     assert result.splitlines()[0].startswith("Khái niệm chính:")
+
+
+def test_multiline_mode_output_preserves_existing_lines() -> None:
+    text = "Khái niệm chính: Self-attention.\nCần nhớ: Mỗi token xét token khác."
+    result = postprocess_summary(text, mode="study_notes")
+    assert result.splitlines() == [
+        "Khái niệm chính: Self-attention.",
+        "Cần nhớ: Mỗi token xét token khác.",
+    ]

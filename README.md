@@ -115,6 +115,8 @@ python scripts/generate_synthetic.py --input data/synthetic/reviewed_all.json
 python scripts/train_phase2.py --config configs/train_phase2.yaml
 ```
 
+`configs/train_phase2.yaml` is the epoch-3 experiment config. Use `configs/train_phase2_epoch2.yaml` if you need to reproduce the epoch-2 baseline separately.
+
 Phase 2 uses a paired controllability dataset to adapt the model to the four output modes:
 
 - `concise`
@@ -149,6 +151,8 @@ models/vit5-summarizer-v2
 python scripts/evaluate.py --config configs/eval.yaml
 ```
 
+`configs/eval.yaml` defaults to a fixed 200-sample VietNews subset so Colab evaluation does not try to generate predictions for the full test set.
+
 Evaluation outputs:
 
 ```text
@@ -180,6 +184,11 @@ python scripts/evaluate_modes.py \
 ```
 
 Manual scoring can be recorded in `reports/examples/holdout_rubric_template.csv`.
+After filling the rubric scores, summarize them with:
+
+```bash
+python scripts/summarize_holdout_rubric.py
+```
 
 ## Predict
 

@@ -56,6 +56,8 @@ def main() -> None:
         num_beams=int(deep_get(config, "generation.num_beams", 4)),
         repetition_penalty=float(deep_get(config, "generation.repetition_penalty", 1.2)),
         no_repeat_ngram_size=int(deep_get(config, "generation.no_repeat_ngram_size", 3)),
+        min_new_tokens=deep_get(config, "generation.min_new_tokens"),
+        length_penalty=float(deep_get(config, "generation.length_penalty", 1.0)),
     )
 
     logger.info("Generating predictions for %s examples.", len(rows))

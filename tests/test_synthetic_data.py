@@ -69,3 +69,22 @@ def test_holdout_eval_set_distribution() -> None:
         "project_updates": 5,
         "general_articles": 5,
     }
+
+
+def test_mode_targets_follow_evaluator_format() -> None:
+    rows = json.loads(Path("data/synthetic/reviewed_all.json").read_text(encoding="utf-8"))
+
+    for row in rows:
+        summary = row["summary"]
+        if row["mode"] == "study_notes":
+            lines = [line for line in summary.splitlines() if line.strip()]
+            assert len(lines) == 4
+            assert lines[0].startswith("Khái niệm chính:")
+            assert lines[1].startswith("Cần nhớ:")
+            assert lines[2].startswith("Ví dụ:")
+            assert lines[3].startswith("Lỗi dễ nhầm:")
+
+        if row["mode"] == "action_items" and summary != "Không có việc cần làm rõ ràng.":
+            assert "Người phụ trách:" in summary
+            assert "Hành động:" in summary
+            assert "Deadline:" in summary

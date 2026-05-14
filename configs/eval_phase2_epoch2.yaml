@@ -1,7 +1,7 @@
 seed: 42
 
 model:
-  name: models/vit5-summarizer-v2
+  name: models/vit5-summarizer-v2-epoch2
   fallback_name: VietAI/vit5-base
 
 dataset:
@@ -25,5 +25,5 @@ generation:
     long: 0
 
 outputs:
-  metrics_file: reports/metrics/eval_results.json
-  predictions_file: reports/examples/test_predictions.jsonl
+  metrics_file: reports/metrics/eval_phase2_epoch2.json
+  predictions_file: reports/examples/test_predictions_phase2_epoch2.jsonl

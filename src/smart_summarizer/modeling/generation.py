@@ -19,6 +19,12 @@ DEFAULT_MAX_NEW_TOKENS = {
     "long": 192,
 }
 
+DEFAULT_MIN_NEW_TOKENS = {
+    "short": 0,
+    "medium": 0,
+    "long": 0,
+}
+
 
 @dataclass(frozen=True)
 class GenerationRequest:
@@ -51,14 +57,19 @@ def generation_kwargs(
     repetition_penalty: float = 1.2,
     no_repeat_ngram_size: int = 3,
     max_new_tokens: dict[str, int] | None = None,
+    min_new_tokens: dict[str, int] | None = None,
+    length_penalty: float = 1.0,
 ) -> dict[str, int | float | bool]:
     validate_mode_length("concise", length)
-    token_map = max_new_tokens or DEFAULT_MAX_NEW_TOKENS
+    max_token_map = max_new_tokens or DEFAULT_MAX_NEW_TOKENS
+    min_token_map = min_new_tokens or DEFAULT_MIN_NEW_TOKENS
     return {
-        "max_new_tokens": int(token_map.get(length, DEFAULT_MAX_NEW_TOKENS[length])),
+        "max_new_tokens": int(max_token_map.get(length, DEFAULT_MAX_NEW_TOKENS[length])),
+        "min_new_tokens": int(min_token_map.get(length, DEFAULT_MIN_NEW_TOKENS[length])),
         "num_beams": num_beams,
         "repetition_penalty": repetition_penalty,
         "no_repeat_ngram_size": no_repeat_ngram_size,
+        "length_penalty": length_penalty,
         "early_stopping": True,
         "return_dict_in_generate": True,
         "output_scores": True,

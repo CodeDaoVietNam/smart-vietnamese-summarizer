@@ -70,6 +70,8 @@ class SmartSummarizer:
             repetition_penalty=float(self.generation_config.get("repetition_penalty", 1.2)),
             no_repeat_ngram_size=int(self.generation_config.get("no_repeat_ngram_size", 3)),
             max_new_tokens=self.generation_config.get("max_new_tokens"),
+            min_new_tokens=self.generation_config.get("min_new_tokens"),
+            length_penalty=float(self.generation_config.get("length_penalty", 1.0)),
         )
 
         start = time.perf_counter()

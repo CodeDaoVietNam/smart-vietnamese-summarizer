@@ -11,6 +11,7 @@ def test_build_instruction_uses_mode_prefix() -> None:
 def test_generation_kwargs_uses_length_budget() -> None:
     kwargs = generation_kwargs(length="short")
     assert kwargs["max_new_tokens"] == 64
+    assert kwargs["min_new_tokens"] == 0
     assert kwargs["num_beams"] == 4
 
 

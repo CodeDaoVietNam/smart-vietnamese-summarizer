@@ -492,6 +492,14 @@ def sentence_case(text: str) -> str:
     return text[:1].upper() + text[1:] if text else text
 
 
+def action_item(owner: str, action: str, deadline: str) -> str:
+    return (
+        f"- Người phụ trách: {owner}\n"
+        f"  Hành động: {action}\n"
+        f"  Deadline: {deadline}"
+    )
+
+
 def variation(index: int) -> str:
     details = (
         "Người ghi biên bản cũng lưu lại lý do ưu tiên, tiêu chí kiểm tra kết quả và phần cần hỏi lại nếu dữ kiện chưa đủ rõ.",
@@ -523,11 +531,12 @@ def meeting_base(index: int, context: dict[str, str]) -> BaseExample:
         f"- Rủi ro cần theo dõi: {context['risk']}.\n"
         f"- Các đầu việc phải hoàn thành trước {context['deadline']}."
     )
-    action_items = (
-        f"- {context['owner_a']} {context['task_a']} trước {context['deadline']}.\n"
-        f"- {context['owner_b']} {context['task_b']} trước {context['deadline']}.\n"
-        f"- {context['owner_c']} {context['task_c']} trước {context['deadline']}.\n"
-        f"- Cả nhóm chạy thử lại luồng chính và ghi nhận lỗi còn tồn tại."
+    action_items = "\n".join(
+        (
+            action_item(context["owner_a"], context["task_a"], context["deadline"]),
+            action_item(context["owner_b"], context["task_b"], context["deadline"]),
+            action_item(context["owner_c"], context["task_c"], context["deadline"]),
+        )
     )
     study_notes = (
         f"Khái niệm chính: điều phối công việc trong {context['topic']}.\n"
@@ -557,17 +566,17 @@ def lecture_base(index: int, context: dict[str, str]) -> BaseExample:
         f"- Lợi ích: {context['benefit']}.\n"
         f"- Ví dụ: {context['example']}."
     )
-    action_items = (
-        f"- Sinh viên hoàn thành bài tập: {context['exercise']}.\n"
-        f"- Sinh viên tự viết lại định nghĩa {context['concept']} bằng lời của mình.\n"
-        f"- Nhóm học tập chuẩn bị một ví dụ về {context['concept']} trước buổi ôn.\n"
-        f"- Người phụ trách ghi chú thêm lỗi dễ nhầm: {context['mistake']}."
+    action_items = "\n".join(
+        (
+            action_item("Sinh viên", f"hoàn thành bài tập {context['exercise']}", "trước buổi học tiếp theo"),
+            action_item("Sinh viên", f"tự viết lại định nghĩa {context['concept']} bằng lời của mình", "trước buổi ôn"),
+            action_item("Nhóm học tập", f"chuẩn bị một ví dụ về {context['concept']}", "trước buổi ôn"),
+        )
     )
     study_notes = (
         f"Khái niệm chính: {context['concept']}.\n"
         f"Cần nhớ: {context['definition']}.\n"
         f"Ví dụ: {context['example']}.\n"
-        f"Ý nghĩa: {context['benefit']}.\n"
         f"Lỗi dễ nhầm: {context['mistake']}."
     )
     return BaseExample(f"lecture_{index:02d}", "lecture_notes", context["concept"], document, concise, bullet, action_items, study_notes)
@@ -592,17 +601,17 @@ def project_base(index: int, context: dict[str, str]) -> BaseExample:
         f"- Vấn đề còn lại: {context['issue']}.\n"
         f"- Chỉ số theo dõi: {context['metric']}."
     )
-    action_items = (
-        f"- {context['owner_a']} {context['task_a']} trước {context['deadline']}.\n"
-        f"- {context['owner_b']} {context['task_b']} trước {context['deadline']}.\n"
-        f"- Nhóm sản phẩm tổng hợp phản hồi người dùng trước {context['deadline']}.\n"
-        f"- Trưởng nhóm cập nhật chỉ số {context['metric']} trong báo cáo sprint."
+    action_items = "\n".join(
+        (
+            action_item(context["owner_a"], context["task_a"], context["deadline"]),
+            action_item(context["owner_b"], context["task_b"], context["deadline"]),
+            action_item("Trưởng nhóm", f"cập nhật chỉ số {context['metric']} trong báo cáo sprint", context["deadline"]),
+        )
     )
     study_notes = (
         f"Khái niệm chính: theo dõi tiến độ dự án {context['project']}.\n"
         f"Cần nhớ: {context['progress']} nhưng còn vấn đề {context['issue']}.\n"
         f"Ví dụ: dùng chỉ số {context['metric']} để quyết định bước tiếp theo.\n"
-        f"Ý nghĩa: cải tiến nên dựa trên số đo và phản hồi thật.\n"
         f"Lỗi dễ nhầm: chỉ báo cáo tiến độ mà quên nêu vấn đề còn tồn tại."
     )
     return BaseExample(f"project_{index:02d}", "project_updates", context["project"], document, concise, bullet, action_items, study_notes)
@@ -627,17 +636,17 @@ def study_base(index: int, context: dict[str, str]) -> BaseExample:
         f"- Trọng tâm: {context['focus']}.\n"
         f"- Lỗi cần tránh: {context['mistake']}."
     )
-    action_items = (
-        f"- {sentence_case(context['owner'])} tổng hợp ghi chú cuối cùng trước {context['deadline']}.\n"
-        f"- Mỗi thành viên chuẩn bị một ví dụ cho phần {context['focus']}.\n"
-        f"- Cả nhóm rà soát lỗi dễ nhầm: {context['mistake']}.\n"
-        f"- Người phụ trách gửi bản ôn tập ngắn cho nhóm trước buổi học."
+    action_items = "\n".join(
+        (
+            action_item(sentence_case(context["owner"]), "tổng hợp ghi chú cuối cùng", context["deadline"]),
+            action_item("Mỗi thành viên", f"chuẩn bị một ví dụ cho phần {context['focus']}", context["deadline"]),
+            action_item("Cả nhóm", f"rà soát lỗi dễ nhầm: {context['mistake']}", "trước buổi học"),
+        )
     )
     study_notes = (
         f"Khái niệm chính: {context['topic']}.\n"
         f"Cần nhớ: {context['focus']}.\n"
         f"Ví dụ: áp dụng cách học bằng việc {context['method']}.\n"
-        f"Ý nghĩa: ghi chú tốt giúp ôn nhanh nhưng vẫn có ví dụ cụ thể.\n"
         f"Lỗi dễ nhầm: {context['mistake']}."
     )
     return BaseExample(f"study_{index:02d}", "study_materials", context["topic"], document, concise, bullet, action_items, study_notes)
@@ -668,7 +677,6 @@ def article_base(index: int, context: dict[str, str]) -> BaseExample:
         f"Khái niệm chính: {context['topic']}.\n"
         f"Cần nhớ: {context['main_point']}.\n"
         f"Ví dụ: {context['detail_a']}.\n"
-        f"Ý nghĩa: {context['impact']}.\n"
         f"Lỗi dễ nhầm: bỏ qua rủi ro {context['risk']}."
     )
     return BaseExample(f"article_{index:02d}", "general_articles", context["topic"], document, concise, bullet, action_items, study_notes)

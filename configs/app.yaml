@@ -19,7 +19,12 @@ generation:
   num_beams: 4
   repetition_penalty: 1.2
   no_repeat_ngram_size: 3
+  length_penalty: 1.0
   max_new_tokens:
-    short: 64
-    medium: 128
-    long: 192
+    short: 96
+    medium: 160
+    long: 256
+  min_new_tokens:
+    short: 0
+    medium: 0
+    long: 0

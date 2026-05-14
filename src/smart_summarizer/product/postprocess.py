@@ -9,6 +9,14 @@ SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?。])\s+")
 
 
 def split_sentences(text: str) -> list[str]:
+    line_items = [
+        clean_text(line).strip(" -•\n\t")
+        for line in (text or "").splitlines()
+        if clean_text(line).strip(" -•\n\t")
+    ]
+    if len(line_items) > 1:
+        return line_items
+
     text = clean_text(text)
     if not text:
         return []
@@ -55,11 +63,10 @@ def format_study_notes(text: str) -> str:
 
 
 def postprocess_summary(text: str, mode: str) -> str:
-    text = clean_text(text)
     if mode == "bullet":
         return format_bullets(text)
     if mode == "action_items":
         return format_action_items(text)
     if mode == "study_notes":
         return format_study_notes(text)
-    return text
+    return clean_text(text)
