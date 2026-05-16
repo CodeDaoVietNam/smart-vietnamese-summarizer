@@ -5,6 +5,7 @@ import hashlib
 import json
 import random
 import re
+import warnings
 from collections import Counter
 from pathlib import Path
 from typing import Any, Callable
@@ -149,15 +150,38 @@ def load_remote_rows(
 def load_xlsum_vietnamese_rows(max_rows: int | None = None) -> list[dict[str, str]]:
     """Load XL-Sum Vietnamese without relying on deprecated dataset scripts."""
     from datasets import load_dataset
-    from huggingface_hub import hf_hub_download
+    from huggingface_hub import hf_hub_download, list_repo_files
 
     data_files = {}
+    repo_files = list_repo_files("csebuetnlp/xlsum", repo_type="dataset")
     for split in ("train", "validation", "test"):
-        data_files[split] = hf_hub_download(
-            repo_id="csebuetnlp/xlsum",
-            repo_type="dataset",
-            filename=f"vietnamese/xlsum-{split}.parquet",
-        )
+        candidates = [
+            file_name
+            for file_name in repo_files
+            if file_name.endswith(".parquet")
+            and file_name.startswith(f"vietnamese/{split}/")
+        ]
+        if not candidates:
+            candidates = [
+                file_name
+                for file_name in repo_files
+                if file_name.endswith(".parquet")
+                and file_name.startswith("vietnamese/")
+                and split in file_name
+            ]
+        if not candidates:
+            warnings.warn(f"No XL-Sum Vietnamese parquet files found for split '{split}'.")
+            continue
+        data_files[split] = [
+            hf_hub_download(
+                repo_id="csebuetnlp/xlsum",
+                repo_type="dataset",
+                filename=file_name,
+            )
+            for file_name in sorted(candidates)
+        ]
+    if not data_files:
+        return []
     raw = load_dataset("parquet", data_files=data_files)
 
     rows: list[dict[str, str]] = []
@@ -276,8 +300,16 @@ def main() -> None:
     if not args.skip_remote:
         xlsum_needed = args.xlsum_train + args.xlsum_validation + args.holdout_size + 500
         wikihow_needed = args.wikihow_train + args.wikihow_validation + args.holdout_size + 500
-        xlsum = load_xlsum_vietnamese_rows(max_rows=xlsum_needed)
-        wikihow = load_remote_rows("ithieund/viWikiHow-Abs-Sum", max_rows=wikihow_needed)
+        try:
+            xlsum = load_xlsum_vietnamese_rows(max_rows=xlsum_needed)
+        except Exception as exc:
+            warnings.warn(f"Could not load XL-Sum Vietnamese; continuing without it. Error: {exc}")
+            xlsum = []
+        try:
+            wikihow = load_remote_rows("ithieund/viWikiHow-Abs-Sum", max_rows=wikihow_needed)
+        except Exception as exc:
+            warnings.warn(f"Could not load viWikiHow; continuing without it. Error: {exc}")
+            wikihow = []
 
     synthetic_train = load_synthetic(args.synthetic_train)
     synthetic_validation = load_synthetic(args.synthetic_validation)
