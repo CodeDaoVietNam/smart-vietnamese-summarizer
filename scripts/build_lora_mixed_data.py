@@ -149,16 +149,16 @@ def load_remote_rows(
 def load_xlsum_vietnamese_rows(max_rows: int | None = None) -> list[dict[str, str]]:
     """Load XL-Sum Vietnamese without relying on deprecated dataset scripts."""
     from datasets import load_dataset
+    from huggingface_hub import hf_hub_download
 
-    data_files = {
-        "train": "hf://datasets/csebuetnlp/xlsum/vietnamese/xlsum-train.parquet",
-        "validation": "hf://datasets/csebuetnlp/xlsum/vietnamese/xlsum-validation.parquet",
-        "test": "hf://datasets/csebuetnlp/xlsum/vietnamese/xlsum-test.parquet",
-    }
-    try:
-        raw = load_dataset("parquet", data_files=data_files)
-    except Exception:
-        raw = load_dataset("GEM/xlsum", "vietnamese")
+    data_files = {}
+    for split in ("train", "validation", "test"):
+        data_files[split] = hf_hub_download(
+            repo_id="csebuetnlp/xlsum",
+            repo_type="dataset",
+            filename=f"vietnamese/xlsum-{split}.parquet",
+        )
+    raw = load_dataset("parquet", data_files=data_files)
 
     rows: list[dict[str, str]] = []
     for split in raw.values():

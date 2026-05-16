@@ -27,7 +27,12 @@ def load_seq2seq_model(
 
     resolved_device = choose_device(device)
     model = AutoModelForSeq2SeqLM.from_pretrained(model_name_or_path)
-    if adapter_path and Path(adapter_path, "adapter_config.json").exists():
+    if adapter_path:
+        if not Path(adapter_path, "adapter_config.json").exists():
+            raise FileNotFoundError(
+                f"LoRA adapter was requested but not found at {adapter_path}. "
+                "Run scripts/train_lora.py first, or remove model.adapter_path from the config."
+            )
         from peft import PeftModel
 
         model = PeftModel.from_pretrained(model, adapter_path)
