@@ -1,0 +1,30 @@
+seed: 42
+
+model:
+  name: models/vit5-summarizer-v1
+  adapter_path: models/vit5-summarizer-lora
+  fallback_name: VietAI/vit5-base
+
+dataset:
+  test_file: data/processed/test.jsonl
+  max_samples: 200
+
+tokenization:
+  max_source_length: 512
+  max_target_length: 128
+
+generation:
+  mode: concise
+  length: medium
+  num_beams: 4
+  repetition_penalty: 1.2
+  no_repeat_ngram_size: 3
+  length_penalty: 1.0
+  min_new_tokens:
+    short: 0
+    medium: 0
+    long: 0
+
+outputs:
+  metrics_file: reports/metrics/eval_lora.json
+  predictions_file: reports/examples/test_predictions_lora.jsonl

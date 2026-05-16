@@ -36,8 +36,9 @@ def main() -> None:
         deep_get(config, "model.name", "models/vit5-summarizer-v2"),
         deep_get(config, "model.fallback_name", "VietAI/vit5-base"),
     )
+    adapter_path = deep_get(config, "model.adapter_path")
     tokenizer = load_tokenizer(model_path)
-    model, _ = load_seq2seq_model(model_path)
+    model, _ = load_seq2seq_model(model_path, adapter_path=adapter_path)
     rows = load_jsonl(deep_get(config, "dataset.test_file", "data/processed/test.jsonl"))
     max_samples = deep_get(config, "dataset.max_samples")
     if max_samples:
@@ -62,14 +63,18 @@ def main() -> None:
 
     logger.info("Generating predictions for %s examples.", len(rows))
     for row in rows:
-        instruction = build_instruction(row["document"], mode=mode)
+        row_mode = str(row.get("mode") or mode)
+        instruction = build_instruction(row["document"], mode=row_mode)
+        model_device = getattr(model, "device", None)
+        if model_device is None:
+            model_device = next(model.parameters()).device
         encoded = tokenizer(
             instruction,
             return_tensors="pt",
             max_length=max_source_length,
             truncation=True,
         )
-        encoded = {key: value.to(model.device) for key, value in encoded.items()}
+        encoded = {key: value.to(model_device) for key, value in encoded.items()}
         output = model.generate(**encoded, **kwargs)
         prediction = tokenizer.decode(output.sequences[0], skip_special_tokens=True)
         reference = row["summary"]

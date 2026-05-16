@@ -145,6 +145,35 @@ The final checkpoint is saved to:
 models/vit5-summarizer-v2
 ```
 
+## LoRA Mixed-Data Adaptation
+
+LoRA keeps the Phase 1 checkpoint frozen as the backbone and trains a small shared adapter on mixed data. This is the recommended experiment when Phase 2 synthetic data is too small for stable full fine-tuning.
+
+```bash
+python scripts/build_lora_mixed_data.py
+python scripts/train_lora.py --config configs/train_lora.yaml
+python scripts/evaluate.py --config configs/eval_lora.yaml
+python scripts/evaluate.py --config configs/eval_lora_holdout.yaml
+```
+
+For local smoke tests without downloading remote datasets:
+
+```bash
+python scripts/build_lora_mixed_data.py --skip-remote
+```
+
+The LoRA adapter is saved to:
+
+```text
+models/vit5-summarizer-lora
+```
+
+Demo the adapter without replacing the baseline app config:
+
+```bash
+python scripts/predict.py --config configs/app_lora.yaml --text-file data/samples/meeting_note_vi.txt --mode action_items
+```
+
 ## Evaluate
 
 ```bash

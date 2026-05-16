@@ -1,0 +1,31 @@
+model:
+  name: models/vit5-summarizer-v1
+  adapter_path: models/vit5-summarizer-lora
+  fallback_name: VietAI/vit5-base
+  device: auto
+
+api:
+  base_url: http://127.0.0.1:8000
+  timeout_seconds: 180
+
+tokenization:
+  max_source_length: 512
+
+generation:
+  prefixes:
+    concise: "Tóm tắt ngắn gọn thành một đoạn văn tự nhiên, không dùng bullet: "
+    bullet: "Tóm tắt thành các ý chính dạng bullet, mỗi bullet một ý: "
+    action_items: "Chỉ trích xuất việc cần làm. Mỗi dòng gồm người phụ trách, hành động, deadline nếu có: "
+    study_notes: "Tạo ghi chú học tập. Nêu khái niệm chính, cần nhớ, ví dụ, lỗi dễ nhầm: "
+  num_beams: 4
+  repetition_penalty: 1.2
+  no_repeat_ngram_size: 3
+  length_penalty: 1.0
+  max_new_tokens:
+    short: 96
+    medium: 160
+    long: 256
+  min_new_tokens:
+    short: 0
+    medium: 0
+    long: 0

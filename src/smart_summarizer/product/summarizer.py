@@ -18,17 +18,23 @@ class SmartSummarizer:
         self,
         model_name_or_path: str,
         fallback_model: str | None = None,
+        adapter_path: str | None = None,
         device: str = "auto",
         max_source_length: int = 512,
         generation_config: dict[str, Any] | None = None,
     ) -> None:
         self.model_name_or_path = resolve_existing_model(model_name_or_path, fallback_model)
+        self.adapter_path = str(adapter_path) if adapter_path else None
         self.device = device
         self.max_source_length = max_source_length
         self.generation_config = generation_config or {}
         self.prefixes = self.generation_config.get("prefixes")
         self.tokenizer = load_tokenizer(self.model_name_or_path)
-        self.model, self.resolved_device = load_seq2seq_model(self.model_name_or_path, device=device)
+        self.model, self.resolved_device = load_seq2seq_model(
+            self.model_name_or_path,
+            device=device,
+            adapter_path=self.adapter_path,
+        )
 
     @classmethod
     def from_config(cls, config_path: str | Path = "configs/app.yaml") -> "SmartSummarizer":
@@ -36,6 +42,7 @@ class SmartSummarizer:
         return cls(
             model_name_or_path=deep_get(config, "model.name", "models/vit5-summarizer-v2"),
             fallback_model=deep_get(config, "model.fallback_name", "VietAI/vit5-base"),
+            adapter_path=deep_get(config, "model.adapter_path"),
             device=deep_get(config, "model.device", "auto"),
             max_source_length=int(deep_get(config, "tokenization.max_source_length", 512)),
             generation_config=deep_get(config, "generation", {}),
@@ -56,13 +63,16 @@ class SmartSummarizer:
             }
 
         instruction = build_instruction(cleaned, mode=mode, prefixes=self.prefixes)
+        model_device = getattr(self.model, "device", None)
+        if model_device is None:
+            model_device = next(self.model.parameters()).device
         encoded = self.tokenizer(
             instruction,
             return_tensors="pt",
             max_length=self.max_source_length,
             truncation=True,
         )
-        encoded = {key: value.to(self.model.device) for key, value in encoded.items()}
+        encoded = {key: value.to(model_device) for key, value in encoded.items()}
 
         kwargs = generation_kwargs(
             length=length,

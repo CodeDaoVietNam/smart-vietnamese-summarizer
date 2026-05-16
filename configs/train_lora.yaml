@@ -1,0 +1,57 @@
+project_name: smart-vietnamese-summarizer
+seed: 42
+
+model:
+  name: models/vit5-summarizer-v1
+  output_dir: models/vit5-summarizer-lora
+
+dataset:
+  train_file: data/lora/train.jsonl
+  validation_file: data/lora/validation.jsonl
+
+prefixes:
+  concise: "Tóm tắt ngắn gọn thành một đoạn văn tự nhiên, không dùng bullet: "
+  bullet: "Tóm tắt thành các ý chính dạng bullet, mỗi bullet một ý: "
+  action_items: "Chỉ trích xuất việc cần làm. Mỗi dòng gồm người phụ trách, hành động, deadline nếu có: "
+  study_notes: "Tạo ghi chú học tập. Nêu khái niệm chính, cần nhớ, ví dụ, lỗi dễ nhầm: "
+
+peft:
+  method: lora
+  r: 8
+  lora_alpha: 16
+  lora_dropout: 0.05
+  target_modules: ["q", "v"]
+  bias: none
+  task_type: SEQ_2_SEQ_LM
+
+tokenization:
+  max_source_length: 512
+  max_target_length: 128
+
+training:
+  epochs: 3
+  learning_rate: 2.0e-4
+  per_device_train_batch_size: 2
+  per_device_eval_batch_size: 2
+  gradient_accumulation_steps: 4
+  fp16: true
+  eval_strategy: epoch
+  save_strategy: epoch
+  save_total_limit: 2
+  load_best_model_at_end: true
+  metric_for_best_model: eval_loss
+  logging_steps: 25
+  predict_with_generate: true
+  warmup_ratio: 0.05
+
+generation:
+  num_beams: 4
+  repetition_penalty: 1.2
+  no_repeat_ngram_size: 3
+  max_new_tokens:
+    short: 96
+    medium: 160
+    long: 256
+
+outputs:
+  training_log: reports/metrics/training_log_lora.json

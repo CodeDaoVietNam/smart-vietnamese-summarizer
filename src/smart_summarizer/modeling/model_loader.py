@@ -17,12 +17,20 @@ def load_tokenizer(model_name_or_path: str):
     return AutoTokenizer.from_pretrained(model_name_or_path, use_fast=False)
 
 
-def load_seq2seq_model(model_name_or_path: str, device: str = "auto"):
+def load_seq2seq_model(
+    model_name_or_path: str,
+    device: str = "auto",
+    adapter_path: str | None = None,
+):
     import torch
     from transformers import AutoModelForSeq2SeqLM
 
     resolved_device = choose_device(device)
     model = AutoModelForSeq2SeqLM.from_pretrained(model_name_or_path)
+    if adapter_path and Path(adapter_path, "adapter_config.json").exists():
+        from peft import PeftModel
+
+        model = PeftModel.from_pretrained(model, adapter_path)
     model.to(torch.device(resolved_device))
     model.eval()
     return model, resolved_device
