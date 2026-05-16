@@ -10,8 +10,8 @@ from smart_summarizer.data.preprocessing import clean_text, is_valid_pair
 from smart_summarizer.utils.paths import ensure_parent, resolve_path
 
 
-DOCUMENT_KEYS = ("document", "article", "content", "text", "body", "original")
-SUMMARY_KEYS = ("summary", "abstract", "highlights", "description")
+DOCUMENT_KEYS = ("document", "article", "content", "text", "body", "original", "source")
+SUMMARY_KEYS = ("summary", "abstract", "highlights", "description", "target", "targets")
 MODE_KEYS = ("mode", "task", "output_mode")
 
 

@@ -146,6 +146,31 @@ def load_remote_rows(
     return rows
 
 
+def load_xlsum_vietnamese_rows(max_rows: int | None = None) -> list[dict[str, str]]:
+    """Load XL-Sum Vietnamese without relying on deprecated dataset scripts."""
+    from datasets import load_dataset
+
+    data_files = {
+        "train": "hf://datasets/csebuetnlp/xlsum/vietnamese/xlsum-train.parquet",
+        "validation": "hf://datasets/csebuetnlp/xlsum/vietnamese/xlsum-validation.parquet",
+        "test": "hf://datasets/csebuetnlp/xlsum/vietnamese/xlsum-test.parquet",
+    }
+    try:
+        raw = load_dataset("parquet", data_files=data_files)
+    except Exception:
+        raw = load_dataset("GEM/xlsum", "vietnamese")
+
+    rows: list[dict[str, str]] = []
+    for split in raw.values():
+        for example in split:
+            pair = normalize_pair(example)
+            if pair:
+                rows.append(pair)
+            if max_rows and len(rows) >= max_rows:
+                return rows
+    return rows
+
+
 def take_unique(
     source_rows: list[dict[str, str]],
     count: int,
@@ -251,7 +276,7 @@ def main() -> None:
     if not args.skip_remote:
         xlsum_needed = args.xlsum_train + args.xlsum_validation + args.holdout_size + 500
         wikihow_needed = args.wikihow_train + args.wikihow_validation + args.holdout_size + 500
-        xlsum = load_remote_rows("csebuetnlp/xlsum", "vietnamese", max_rows=xlsum_needed)
+        xlsum = load_xlsum_vietnamese_rows(max_rows=xlsum_needed)
         wikihow = load_remote_rows("ithieund/viWikiHow-Abs-Sum", max_rows=wikihow_needed)
 
     synthetic_train = load_synthetic(args.synthetic_train)

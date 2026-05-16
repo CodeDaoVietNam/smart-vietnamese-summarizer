@@ -103,7 +103,15 @@ def main() -> None:
     tokenizer = load_tokenizer(model_name)
     base_model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
     base_model.config.use_cache = False
-    model = get_peft_model(base_model, build_lora_config(config))
+    try:
+        model = get_peft_model(base_model, build_lora_config(config))
+    except ImportError as exc:
+        if "torchao" in str(exc).lower():
+            raise ImportError(
+                "PEFT found an incompatible torchao package. In Colab, run "
+                "`pip uninstall -y torchao` and restart the LoRA training cell."
+            ) from exc
+        raise
     parameter_report = trainable_parameter_report(model)
     logger.info("LoRA trainable parameter report: %s", parameter_report)
 
