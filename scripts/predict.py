@@ -32,7 +32,7 @@ def main() -> None:
     print(result["summary"])
     print()
     print(f"Keywords: {', '.join(result['keywords'])}")
-    print(f"Quality Estimate: {result['quality_estimate']}%")
+    print(f"Heuristic Quality Estimate: {result['quality_estimate']}%")
     print(f"Latency: {result['latency_ms']} ms")
 
 

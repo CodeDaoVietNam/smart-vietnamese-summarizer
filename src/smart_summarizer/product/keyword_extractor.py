@@ -12,10 +12,17 @@ TOKEN_RE = re.compile(r"[0-9A-Za-zÀ-ỹ]+", re.UNICODE)
 
 def extract_keywords(text: str, max_keywords: int = 8) -> list[str]:
     words = [word.lower() for word in TOKEN_RE.findall(clean_text(text))]
-    candidates = [
+    unigrams = [
         word
         for word in words
         if len(word) >= 3 and word not in DEFAULT_STOPWORDS_VI and not word.isdigit()
     ]
-    counts = Counter(candidates)
+    bigrams = [
+        f"{words[index]} {words[index + 1]}"
+        for index in range(len(words) - 1)
+        if words[index] in unigrams and words[index + 1] in unigrams
+    ]
+    counts = Counter(unigrams)
+    for phrase in bigrams:
+        counts[phrase] += 2
     return [word for word, _ in counts.most_common(max_keywords)]

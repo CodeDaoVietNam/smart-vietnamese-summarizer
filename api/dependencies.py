@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from functools import lru_cache
+import os
 from pathlib import Path
 import sys
 
@@ -15,4 +16,8 @@ from smart_summarizer.product.summarizer import SmartSummarizer
 
 @lru_cache(maxsize=1)
 def get_summarizer() -> SmartSummarizer:
-    return SmartSummarizer.from_config("configs/app.yaml")
+    return SmartSummarizer.from_config(os.getenv("SUMMARIZER_CONFIG", "configs/app.yaml"))
+
+
+def is_model_loaded() -> bool:
+    return get_summarizer.cache_info().currsize > 0

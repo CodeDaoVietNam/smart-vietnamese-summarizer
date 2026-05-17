@@ -33,7 +33,7 @@ Output:
 {
     "summary": "...",
     "keywords": ["..."],
-    "quality_estimate": 87.5,
+    "quality_estimate": 87.5,  # Heuristic Quality Estimate, not calibrated confidence
     "latency_ms": 1200,
     "input_tokens": 312,
     "mode": "bullet",
@@ -246,7 +246,7 @@ The app supports:
 - Length control
 - Compare-all-modes view through `POST /api/compare-modes`
 - Keyword display
-- Quality Estimate
+- Heuristic Quality Estimate
 - Input token count
 - Inference latency
 
@@ -280,7 +280,7 @@ Recommended report chapters:
 
 - `action_items` and `study_notes` are implemented through controllable generation plus post-processing, not a fully supervised extraction dataset.
 - Very long inputs are truncated to fit the model context window.
-- Quality Estimate is a heuristic signal, not a calibrated probability.
+- Heuristic Quality Estimate is a rule-based proxy, not a calibrated probability or human evaluation score.
 - VietNews is a better Vietnamese base dataset than WikiLingua, but it still has domain gap with real meeting notes.
 - Generated summaries still require human verification for high-stakes use.
 

@@ -1,0 +1,38 @@
+Bo file nay dung de test demo web Streamlit/FastAPI.
+
+Goi y chon mode:
+
+01_meeting_demo_release.txt -> action_items, bullet
+02_meeting_no_clear_tasks.txt -> concise, bullet, action_items
+03_lecture_transformer_attention.txt -> study_notes, bullet
+04_lecture_ml_evaluation.txt -> study_notes, concise
+05_project_update_summarizer.txt -> bullet, action_items
+06_project_risk_status.txt -> action_items, bullet
+07_article_urban_transport.txt -> concise, bullet
+08_study_material_os_cache.txt -> study_notes
+
+Ba case nen dung khi demo chinh:
+
+1. 01_meeting_demo_release.txt
+   Mode nen chay: action_items, sau do Compare all modes.
+   Ly do: input co nguoi phu trach va deadline ro, de thay mode action_items.
+
+2. 03_lecture_transformer_attention.txt
+   Mode nen chay: study_notes va bullet.
+   Ly do: input la bai hoc, study_notes co the hien Khai niem chinh, Can nho, Vi du, Loi de nham.
+
+3. 07_article_urban_transport.txt
+   Mode nen chay: concise va bullet.
+   Ly do: input giong bai viet tong quat, phu hop de cho thay tom tat doan van va bullet.
+
+Case du phong neu muon noi ve limitation:
+
+05_project_update_summarizer.txt -> bullet/action_items, de giai thich he thong tot hon ve format nhung van can human review.
+
+Khi demo, nen dung Compare all modes tren cung mot input de cho thay khac biet:
+
+- Meeting/project: action_items nen co nguoi phu trach, han chot, hanh dong.
+- Lecture/study material: study_notes nen co Khai niem chinh, Can nho, Vi du, Loi de nham.
+- Article: concise nen la mot doan ngan tu nhien, bullet nen la danh sach y chinh.
+- Case 02 khong co task ro rang, action_items ly tuong nen noi khong co viec can lam ro rang.
+- Diem Heuristic Quality Estimate chi la proxy dua tren do dai, lap tu, keyword coverage va tin hieu generation; khong phai xac suat dung sai.

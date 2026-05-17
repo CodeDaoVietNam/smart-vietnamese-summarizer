@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import threading
 import time
 from pathlib import Path
 from typing import Any
@@ -8,8 +9,8 @@ from smart_summarizer.config import deep_get, load_config
 from smart_summarizer.data.preprocessing import clean_text
 from smart_summarizer.modeling.generation import build_instruction, generation_kwargs, validate_mode_length
 from smart_summarizer.modeling.model_loader import load_seq2seq_model, load_tokenizer, resolve_existing_model
+from smart_summarizer.product.formatters import format_summary
 from smart_summarizer.product.keyword_extractor import extract_keywords
-from smart_summarizer.product.postprocess import postprocess_summary
 from smart_summarizer.product.quality_estimate import compute_quality_estimate
 
 
@@ -58,11 +59,12 @@ class SmartSummarizer:
                 "quality_estimate": 0.0,
                 "latency_ms": 0,
                 "input_tokens": 0,
+                "output_tokens": 0,
                 "mode": mode,
                 "length": length,
             }
 
-        instruction = build_instruction(cleaned, mode=mode, prefixes=self.prefixes)
+        instruction = build_instruction(cleaned, mode=mode, length=length, prefixes=self.prefixes)
         model_device = getattr(self.model, "device", None)
         if model_device is None:
             model_device = next(self.model.parameters()).device
@@ -89,7 +91,10 @@ class SmartSummarizer:
         latency_ms = int((time.perf_counter() - start) * 1000)
 
         generated = self.tokenizer.decode(outputs.sequences[0], skip_special_tokens=True)
-        summary = postprocess_summary(generated, mode)
+        summary = format_summary(generated, source=cleaned, mode=mode, length=length)
+        output_tokens = len(
+            self.tokenizer(summary, add_special_tokens=False, return_attention_mask=False)["input_ids"]
+        )
         keywords = extract_keywords(cleaned)
         score_tensors = getattr(outputs, "scores", None) or []
         generation_scores = [float(score.max().item()) for score in score_tensors]
@@ -106,18 +111,22 @@ class SmartSummarizer:
             "quality_estimate": quality_estimate,
             "latency_ms": latency_ms,
             "input_tokens": int(encoded["input_ids"].shape[-1]),
+            "output_tokens": int(output_tokens),
             "mode": mode,
             "length": length,
         }
 
 
 _DEFAULT_SUMMARIZER: SmartSummarizer | None = None
+_DEFAULT_SUMMARIZER_LOCK = threading.Lock()
 
 
 def get_default_summarizer(config_path: str | Path = "configs/app.yaml") -> SmartSummarizer:
     global _DEFAULT_SUMMARIZER
     if _DEFAULT_SUMMARIZER is None:
-        _DEFAULT_SUMMARIZER = SmartSummarizer.from_config(config_path)
+        with _DEFAULT_SUMMARIZER_LOCK:
+            if _DEFAULT_SUMMARIZER is None:
+                _DEFAULT_SUMMARIZER = SmartSummarizer.from_config(config_path)
     return _DEFAULT_SUMMARIZER
 
 

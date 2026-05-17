@@ -7,7 +7,8 @@ Project hiện tại là một hệ thống **Vietnamese controllable abstractiv
 ```text
 Long Vietnamese text + mode + length
         -> ViT5 summarization pipeline
-        -> summary + keywords + quality estimate + latency
+        -> neural draft + symbolic extractor/critic/renderer
+        -> summary + keywords + heuristic quality estimate + latency
 ```
 
 ---
@@ -21,8 +22,8 @@ flowchart LR
     api --> service[SmartSummarizer Service]
     service --> tokenizer[Tokenizer]
     service --> model[Fine-tuned ViT5 Model]
-    service --> post[Post-processing]
-    service --> quality[Quality Estimate]
+    service --> post[Hybrid Decoder<br/>Extractor + Critic + Renderer]
+    service --> quality[Heuristic Quality Estimate]
     service --> keywords[Keyword Extraction]
     post --> api
     quality --> api
@@ -36,10 +37,10 @@ flowchart LR
 |---|---|---|
 | UI | `app/streamlit_app.py` | Giao diện để nhập text, chọn mode, chọn length, xem output |
 | API | `api/main.py` | REST API nhận request từ UI hoặc client khác: health, summarize, compare modes |
-| Product service | `src/smart_summarizer/product/summarizer.py` | Điều phối model, generation, keyword, quality |
+| Product service | `src/smart_summarizer/product/summarizer.py` | Điều phối model, generation, formatter, keyword, quality |
 | Model loading | `src/smart_summarizer/modeling/model_loader.py` | Load tokenizer/model và chọn device |
 | Generation | `src/smart_summarizer/modeling/generation.py` | Build instruction, set beam search, length control |
-| Post-processing | `src/smart_summarizer/product/postprocess.py` | Làm sạch output theo mode |
+| Hybrid decoder | `src/smart_summarizer/product/formatters.py` | Điều phối extractor, critic và renderer để ổn định output theo mode |
 | Evaluation | `src/smart_summarizer/evaluation/` | ROUGE và error tags |
 | CLI scripts | `scripts/` | Entry points cho data prep, training, eval, predict |
 | Config | `configs/` | Tách tham số khỏi code |
@@ -138,7 +139,9 @@ sequenceDiagram
     S->>S: clean text + build instruction
     S->>M: tokenize + generate with beam search
     M-->>S: generated token IDs
-    S->>S: decode + postprocess + keywords + quality estimate
+    S->>S: decode neural draft
+    S->>S: extractor + critic + renderer by mode
+    S->>S: keywords + heuristic quality estimate
     S-->>API: summary payload
     API-->>UI: JSON response
     UI-->>U: Render summary, keywords, quality, latency

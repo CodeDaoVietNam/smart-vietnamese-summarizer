@@ -184,7 +184,7 @@ Frontend use cases:
 - Dán văn bản tiếng Việt và chọn mode/length.
 - Generate một summary.
 - Compare all modes trên cùng input bằng `/api/compare-modes`.
-- Hiển thị summary, keywords, quality estimate, token count và latency.
+- Hiển thị summary, keywords, heuristic quality estimate, token count và latency.
 - Báo lỗi rõ khi backend offline hoặc input rỗng.
 
 ## 5. Acceptance Criteria

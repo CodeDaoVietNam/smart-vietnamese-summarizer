@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from fastapi import FastAPI
 
-from api.dependencies import get_summarizer
+from api.dependencies import get_summarizer, is_model_loaded
 from api.schemas import CompareModesRequest, CompareModesResponse, SummarizeRequest, SummarizeResponse
 from smart_summarizer.constants import SUMMARY_MODES
 
@@ -16,8 +16,7 @@ app = FastAPI(
 
 @app.get("/api/health")
 async def health() -> dict[str, bool | str]:
-    model_loaded = get_summarizer() is not None
-    return {"status": "ok", "model_loaded": model_loaded}
+    return {"status": "ok", "model_loaded": is_model_loaded()}
 
 
 @app.post("/api/summarize", response_model=SummarizeResponse)

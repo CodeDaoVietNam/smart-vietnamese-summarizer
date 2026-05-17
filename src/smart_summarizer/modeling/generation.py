@@ -43,9 +43,10 @@ def validate_mode_length(mode: str, length: str) -> None:
 def build_instruction(
     text: str,
     mode: str = "concise",
+    length: str = "medium",
     prefixes: dict[str, str] | None = None,
 ) -> str:
-    validate_mode_length(mode, "medium")
+    validate_mode_length(mode, length)
     mode_prefixes = prefixes or MODE_PREFIXES
     prefix = mode_prefixes[mode].rstrip(": ")
     return f"{prefix}: {clean_text(text)}"

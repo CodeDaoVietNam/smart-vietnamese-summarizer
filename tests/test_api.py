@@ -1,6 +1,7 @@
 from fastapi.testclient import TestClient
 
 from api.main import app
+from api.schemas import MAX_INPUT_CHARS
 
 
 def test_health_endpoint(monkeypatch) -> None:
@@ -63,3 +64,13 @@ def test_compare_modes_endpoint(monkeypatch) -> None:
         "study_notes",
     ]
     assert payload["results"]["study_notes"]["summary"] == "Tom tat study_notes"
+
+
+def test_summarize_rejects_overly_long_text(monkeypatch) -> None:
+    monkeypatch.setattr("api.main.get_summarizer", lambda: object())
+    client = TestClient(app)
+    response = client.post(
+        "/api/summarize",
+        json={"text": "x" * (MAX_INPUT_CHARS + 1), "mode": "concise", "length": "medium"},
+    )
+    assert response.status_code == 422
