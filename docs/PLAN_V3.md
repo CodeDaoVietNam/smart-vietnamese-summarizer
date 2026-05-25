@@ -542,3 +542,38 @@ Project hoàn thành khi:
 - [ ] Web app screenshots
 - [ ] API docs (Swagger auto-generated)
 - [ ] Presentation slides
+
+
+## 13. Assumptions Và Nguồn Tham Khảo
+
+Assumptions:
+- Tài nguyên huấn luyện là Google Colab T4.
+- Project ưu tiên Vietnamese input.
+- Timeline là 4 tuần.
+- Streamlit được chọn để giảm thời gian frontend và tập trung vào NLP.
+- `action_items` là tính năng controllable inference/post-processing, không phải supervised task riêng.
+
+Nguồn tham khảo chính:
+- ViT5 GitHub/VietAI: https://github.com/vietai/ViT5
+- ViT5-base Hugging Face: https://huggingface.co/VietAI/vit5-base
+- ViT5 VietNews summarization model: https://huggingface.co/VietAI/vit5-base-vietnews-summarization
+- WikiLingua dataset: https://huggingface.co/datasets/esdurmus/wiki_lingua
+- VietNews abstractive summarization dataset: https://huggingface.co/datasets/ithieund/VietNews-Abs-Sum
+- FLAN-T5 reference nếu cần so sánh: https://huggingface.co/google/flan-t5-small
+
+
+**Nguồn cần thêm**:
+
+- HuggingFace evaluate library: Tính ROUGE — đây là tool chính cho evaluation	https://huggingface.co/docs/evaluate
+
+- rouge-score PyPI: Backend cho evaluate khi tính ROUGE	https://pypi.org/project/rouge-score/
+
+- Attention Is All You Need (paper gốc): Tham khảo bắt buộc trong báo cáo khi nói về Transformer	https://arxiv.org/abs/1706.03762
+
+- ViT5 paper: Cite trong báo cáo khi giải thích model	https://arxiv.org/abs/2205.06457
+
+- Vietnamese stopwords: Cần cho keyword extraction	https://github.com/stopwords/vietnamese-stopwords
+
+- Streamlit docs: Tham khảo khi build app	https://docs.streamlit.io
+
+- FastAPI docs: Tham khảo khi build API (theo PLAN v3)	https://fastapi.tiangolo.com
