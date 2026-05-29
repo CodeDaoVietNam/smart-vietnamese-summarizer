@@ -230,6 +230,7 @@ python scripts/predict.py --text-file data/samples/meeting_note_vi.txt --mode bu
 Start the FastAPI backend first:
 
 ```bash
+set SUMMARIZER_CONFIG=configs/app_lora.yaml
 uvicorn api.main:app --reload
 ```
 
