@@ -257,17 +257,22 @@ ROUGE-L F1 = 2 × (6/8) × (6/8) / (6/8 + 6/8) = 0.75
 
 ### 8.2 Baseline So Sánh
 
-| Model | ROUGE-1 | ROUGE-2 | ROUGE-L | Controllable? |
-|---|---|---|---|---|
-| ViT5-base zero-shot | ~0.17 | ~0.06 | ~0.14 | ❌ |
-| VietAI/vit5-base-vietnews | ~0.45 | ~0.22 | ~0.41 | ❌ |
-| **Ours Phase 1** | ~0.42 | ~0.20 | ~0.38 | ⚠️ 1 mode |
-| **Ours Phase 2** | ~0.39 | ~0.18 | ~0.35 | ✅ 4 modes |
 
-Phase 2 ROUGE thấp hơn Phase 1 — KHÔNG có nghĩa Phase 2 tệ:
-- ROUGE chỉ đo concise mode so với reference paragraph
-- Phase 2 gain là 4 controllable modes — tính năng Phase 1 không có
-- Trade-off: ROUGE giảm nhẹ đổi lấy controllability
+Số liệu hiện tại trong `reports/metrics`:
+
+| System | ROUGE-1 | ROUGE-2 | ROUGE-L | Nhận xét |
+|---|---:|---:|---:|---|
+| Phase 1 ViT5 | 0.5496 | 0.2294 | 0.3436 | Backbone ổn định cho news summarization |
+| Phase 2 full fine-tune | 0.5490 | 0.2219 | 0.3336 | Có controllability nhưng ROUGE news giảm nhẹ |
+| LoRA mixed-data | 0.5482 | 0.2330 | 0.3411 | Cân bằng hơn Phase 2 full fine-tune |
+| LoRA mixed holdout | 0.5695 | 0.2970 | 0.3913 | Tốt trên phân phối gần mixed data |
+
+Diễn giải:
+
+- Phase 1 vẫn là backbone tốt cho tóm tắt tổng quát.
+- Phase 2 không bắt buộc phải thắng Phase 1 trên ROUGE vì mục tiêu chính là mode controllability.
+- LoRA giữ chất lượng gần Phase 1 hơn Phase 2 full fine-tune, đồng thời học thêm hành vi theo mode.
+- Không nên chọn model chỉ dựa vào ROUGE; cần xem mode adherence, factuality và demo quality.
 
 ### 8.3 Tại Sao ROUGE Không Đủ
 
